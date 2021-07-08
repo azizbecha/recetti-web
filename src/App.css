@@ -3,6 +3,11 @@
   scroll-behavior: smooth;
   font-family: "Google Sans", "Sans Serif";
 }
+#nav-dropdown{
+  color: white;
+  font-weight: bold;
+  background-color: red;
+}
 .btn-primary{
     background-color: #f64152;
     border-color: #f64152;

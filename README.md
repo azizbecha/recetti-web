@@ -1,3 +1,18 @@
+# Reecetti
+## Votre meilleur espace de découvrir et partager des recettes.
+
+
+## TO-DO
+
+(please mark your name if you're assigned to a task)
+
+| Task               |
+| ------------------ |
+| Fix The Navbar     |
+| Fix Home Page      |
+| Fix Login/Register |
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

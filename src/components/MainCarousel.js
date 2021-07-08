@@ -2,7 +2,7 @@ import React from 'react';
 import {Carousel} from 'react-bootstrap'
 
 export default function MainCarousel() {
-    return(
+    return (
         <Carousel slide
     
         autoPlay={true}
@@ -13,7 +13,7 @@ export default function MainCarousel() {
         <img
           className="d-block w-100"
           style={{height:'500px'}}
-          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+          src="../assets/img/recetti-cover.png"
           alt="First slide"
         />
         <Carousel.Caption>
