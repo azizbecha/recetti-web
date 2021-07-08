@@ -9,6 +9,7 @@ import "firebase/firestore";
 import "firebase/storage";
 import "firebase/auth";
 import app from "./auth/Firebase"
+import logo from '../assets/img/recetti-logo.png';
 var user = firebase.auth().currentUser;
 
 export default class NavBar extends React.Component {
@@ -47,7 +48,7 @@ export default class NavBar extends React.Component {
     else {
       return (
         <Navbar style={{backgroundColor:"#f64152",color:'#fff'}} collapseOnSelect expand="lg" >
-          <Navbar.Brand><Link to="/"><strong>Recetti</strong></Link></Navbar.Brand>
+          <Navbar.Brand><img style={{width: '50px',height: '50px'}} src={logo} /><Link to="/"><strong> Recetti</strong></Link></Navbar.Brand>
             <Navbar.Toggle style={{backgroundColor: '#fff',borderColor: '#fff'}} aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                  <Nav className="mr-auto">

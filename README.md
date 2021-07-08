@@ -1,4 +1,4 @@
-# Reecetti
+# Recetti
 ## Votre meilleur espace de découvrir et partager des recettes.
 
 
