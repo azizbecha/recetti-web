@@ -23,11 +23,13 @@ export default class NavBar extends React.Component {
                   <Nav.Link><Link to="/">Home</Link></Nav.Link>
                   <Nav.Link><Link to="/about">About</Link></Nav.Link>
                   <Nav.Link><Link to="/topics">Topics</Link></Nav.Link>
-                     <NavDropdown 
+                  <NavDropdown 
                         id="dropdown-basic nav-dropdown" 
-                        style={{color: '#fff'}} 
+                        style={{backgroundColor:'#73a47',color: '#fff'}} 
                         className="white" 
-                        title="Catégories"
+                        title={
+                          <span style={{color: '#fff'}}>Catégories</span>
+                        }
                        >
         <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
               <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
@@ -58,7 +60,9 @@ export default class NavBar extends React.Component {
                         id="dropdown-basic nav-dropdown" 
                         style={{backgroundColor:'#73a47',color: '#fff'}} 
                         className="white" 
-                        title="Catégories"
+                        title={
+                          <span style={{color: '#fff'}}>Catégories</span>
+                        }
                        >
               <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
               <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
