@@ -4,8 +4,6 @@
 
 ## TO-DO
 
-(please mark your name if you're assigned to a task)
-
 | Task               |
 | ------------------ |
 | Fix The Navbar     |
