@@ -26,8 +26,7 @@ export default class Home extends React.Component {
     }
     render() {   
         return (
-            
-           <Container>        
+                <Container>        
               <center>
                 <br /> <br />
                   <h1 class="font-weight-bold">
@@ -73,6 +72,7 @@ export default class Home extends React.Component {
                 </center>
                 <br />
            </Container>
+
         )
     }
     
