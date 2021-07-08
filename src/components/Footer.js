@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../assets/img/recetti-logo.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Footer() {
     return (
@@ -6,7 +7,7 @@ export default function Footer() {
   <div class="container p-4">
     <div class="row">
       <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-        <h5 class="font-weight-bold"><i class="fa fa-cutlery"></i> Recetti</h5>
+        <h5 class="font-weight-bold"><img style={{width:'45px',marginLeft:'-10px',marginTop: '-5px'}} src={logo} /> Recetti</h5>
 
         <p>
           Recetti est une platforme Tunisienne qui permet de partager des recettes et des idées de plats et Fast Food ...
