@@ -1,6 +1,11 @@
 # Recetti
-## Votre meilleur espace de découvrir et partager des recettes.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/63454940/124963554-e2456380-e017-11eb-927a-b27a838aae80.png" width="350" />
+
+
+<h3 align="center">Votre meilleur espace de découvrir et partager des recettes.</h3>
+</p>
 
 ## TO-DO
 
