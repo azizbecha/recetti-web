@@ -17,7 +17,7 @@ export default class NavBar extends React.Component {
     if (user) {
       return (
         <Navbar style={{backgroundColor:"#f64152",color:'#fff'}} collapseOnSelect expand="lg" >
-            <Navbar.Brand><Link to="/">Recetti</Link></Navbar.Brand>
+            <Navbar.Brand><img style={{width: '50px',height: '50px',marginTop: '-6px'}} src={logo} /><Link to="/">Recetti</Link></Navbar.Brand>
             <Navbar.Toggle style={{backgroundColor: '#fff',borderColor: '#fff'}} aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
