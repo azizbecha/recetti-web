@@ -7,10 +7,10 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-//import logo from './logo.svg';
-import './App.css';
-//import PrimaryBtn from './components/styles/Styles';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import './index.css';
 import {Container} from 'react-bootstrap'
 import MainCarousel from './components/MainCarousel'
 import NavBar from "./components/Navbar";
@@ -21,19 +21,23 @@ export default function App() {
    
       <Router>
           <Switch>
-            <Route path="/about">
+
+          <Route path="/">
             <NavBar />
-              <About />
+              <MainCarousel />
+              <Home />
+              <Footer />
             </Route>
+
+            <Route path="/about">
+              <NavBar />
+               <About />
+            </Route>
+
             <Route path="/topics">
               <Topics />
             </Route>
-            <Route path="/">
-            <NavBar />
-   <MainCarousel />
-   
-              <Home />
-            </Route>
+            
           </Switch>
         
       </Router>
