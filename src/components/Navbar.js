@@ -39,7 +39,7 @@ export default class NavBar extends React.Component {
                      </NavDropdown>
                </Nav>
              <Nav>
-               <Nav.Link><Link to="/profile">{user}</Link></Nav.Link>
+               <Nav.Link><Link to="/profile"><i class="fa fa-user"></i> {user}</Link></Nav.Link>
              </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -70,8 +70,8 @@ export default class NavBar extends React.Component {
                   </NavDropdown>
               </Nav>
           <Nav>
-            <Nav.Link><Link to="/login"><strong>Se Connecter</strong></Link></Nav.Link>
-            <Nav.Link><Link to="/register"><strong>S'inscrire</strong></Link></Nav.Link>
+            <Nav.Link><Link to="/login"><strong><i class="fa fa-sign-in"></i> Se Connecter</strong></Link></Nav.Link>
+            <Nav.Link><Link to="/register"><strong><i class="fa fa-user-plus"></i> S'inscrire</strong></Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
