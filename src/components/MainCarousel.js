@@ -25,10 +25,7 @@ export default function MainCarousel() {
           alt="Second slide"
         />
     
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
+       
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -37,11 +34,7 @@ export default function MainCarousel() {
           src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
           alt="Third slide"
         />
-    
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </Carousel.Caption>
+
       </Carousel.Item>
     </Carousel>
     )

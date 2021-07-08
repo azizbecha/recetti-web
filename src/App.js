@@ -23,8 +23,6 @@ export default function App() {
           <Switch>
             <Route path="/about">
             <NavBar />
-   <MainCarousel />
-   
               <About />
             </Route>
             <Route path="/topics">
@@ -52,15 +50,10 @@ class About extends React.Component {
     return (
       <div>
       <Switch>
-        {/* If the current URL is /about, this route is rendered
-            while the rest are ignored */}
+
         <Route path="/about">
         <h2>abouttt</h2>
         </Route>
-
-        {/* Note how these two routes are ordered. The more specific
-            path="/contact/:id" comes before path="/contact" so that
-            route will render when viewing an individual contact */}
         <Route path="/contact/:id">
         <h2>contactttt</h2>
         </Route>
