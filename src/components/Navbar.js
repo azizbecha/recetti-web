@@ -30,54 +30,47 @@ export default class NavBar extends React.Component {
                         title={
                           <span style={{color: '#fff'}}>Catégories</span>
                         }
-                       >
-        <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/diner">Diner</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dessert">Dessert</Link></NavDropdown.Item>
-            </NavDropdown>
-    </Nav>
-    <Nav>
-      <Nav.Link>
-      <Link to="/profile">{user}</Link>
-      </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
+                  >
+                     <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link style={{color: 'black'}} to="categories/diner">Diner</Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dessert">Dessert</Link></NavDropdown.Item>
+                     </NavDropdown>
+               </Nav>
+             <Nav>
+               <Nav.Link><Link to="/profile">{user}</Link></Nav.Link>
+             </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       )
     }
     else {
       return (
         <Navbar style={{backgroundColor:"#f64152",color:'#fff'}} collapseOnSelect expand="lg" >
-        <Navbar.Brand><Link to="/">Recetti</Link></Navbar.Brand>
-        <Navbar.Toggle style={{backgroundColor: '#fff',borderColor: '#fff'}} aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-             <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                <Nav.Link><Link to="/about">About</Link></Nav.Link>
-                <Nav.Link><Link to="/topics">Topics</Link></Nav.Link>
-                <NavDropdown 
+          <Navbar.Brand><Link to="/"><strong>Recetti</strong></Link></Navbar.Brand>
+            <Navbar.Toggle style={{backgroundColor: '#fff',borderColor: '#fff'}} aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                 <Nav className="mr-auto">
+                  <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                  <Nav.Link><Link to="/about">About</Link></Nav.Link>
+                  <Nav.Link><Link to="/topics">Topics</Link></Nav.Link>
+                    <NavDropdown 
                         id="dropdown-basic nav-dropdown" 
                         style={{backgroundColor:'#73a47',color: '#fff'}} 
                         className="white" 
                         title={
                           <span style={{color: '#fff'}}>Catégories</span>
                         }
-                       >
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/diner">Diner</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dessert">Dessert</Link></NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
+                    >
+                  <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link style={{color: 'black'}} to="categories/diner">Diner</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dessert">Dessert</Link></NavDropdown.Item>
+                  </NavDropdown>
+              </Nav>
           <Nav>
-            <Nav.Link>
-            <Link to="/login">Se Connecter</Link>
-            </Nav.Link>
-
-            <Nav.Link>
-            <Link to="/register"><strong>S'inscrire</strong></Link>
-            </Nav.Link>
+            <Nav.Link><Link to="/login"><strong>Se Connecter</strong></Link></Nav.Link>
+            <Nav.Link><Link to="/register"><strong>S'inscrire</strong></Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
