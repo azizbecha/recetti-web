@@ -15,7 +15,7 @@ import {Container} from 'react-bootstrap'
 import MainCarousel from './components/MainCarousel'
 import NavBar from "./components/Navbar";
 import Home from "./components/Home";
-
+import Footer from './components/Footer';
 export default function App() {
   return (
    
@@ -24,6 +24,7 @@ export default function App() {
             <Route path="/about">
             <NavBar />
    <MainCarousel />
+   
               <About />
             </Route>
             <Route path="/topics">
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/">
             <NavBar />
    <MainCarousel />
+   
               <Home />
             </Route>
           </Switch>
