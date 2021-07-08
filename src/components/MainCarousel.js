@@ -1,6 +1,6 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap'
-
+import Cover from "../assets/img/recetti-cover.png";
 export default function MainCarousel() {
     return (
         <Carousel slide
@@ -13,13 +13,9 @@ export default function MainCarousel() {
         <img
           className="d-block w-100"
           style={{height:'500px'}}
-          src="../assets/img/recetti-cover.png"
+          src={Cover}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
