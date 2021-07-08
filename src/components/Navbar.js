@@ -22,8 +22,9 @@ export default class NavBar extends React.Component {
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                   <Nav.Link><Link to="/">Acceuil</Link></Nav.Link>
-                  <Nav.Link><Link to="/about">Chefs</Link></Nav.Link>
-                  <Nav.Link><Link to="/topics">Recettes</Link></Nav.Link>
+                  <Nav.Link><Link to="/chefs">Chefs</Link></Nav.Link>
+                  <Nav.Link><Link to="/recettes">Recettes</Link></Nav.Link>
+                  <Nav.Link><Link to="/forum">Forum</Link></Nav.Link>
                     <NavDropdown 
                         id="dropdown-basic nav-dropdown" 
                         style={{backgroundColor:'#73a47',color: '#fff'}} 
@@ -53,8 +54,9 @@ export default class NavBar extends React.Component {
               <Navbar.Collapse id="responsive-navbar-nav">
                  <Nav className="mr-auto">
                   <Nav.Link><Link to="/">Acceuil</Link></Nav.Link>
-                  <Nav.Link><Link to="/about">Chefs</Link></Nav.Link>
-                  <Nav.Link><Link to="/topics">Recettes</Link></Nav.Link>
+                  <Nav.Link><Link to="/chefs">Chefs</Link></Nav.Link>
+                  <Nav.Link><Link to="/recettes">Recettes</Link></Nav.Link>
+                  <Nav.Link><Link to="/forum">Forum</Link></Nav.Link>
                     <NavDropdown 
                         id="dropdown-basic nav-dropdown" 
                         style={{backgroundColor:'#73a47',color: '#fff'}} 
