@@ -21,17 +21,17 @@ export default class NavBar extends React.Component {
             <Navbar.Toggle style={{backgroundColor: '#fff',borderColor: '#fff'}} aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                  <Nav.Link><Link to="/about">About</Link></Nav.Link>
-                  <Nav.Link><Link to="/topics">Topics</Link></Nav.Link>
-                  <NavDropdown 
+                  <Nav.Link><Link to="/">Acceuil</Link></Nav.Link>
+                  <Nav.Link><Link to="/about">Chefs</Link></Nav.Link>
+                  <Nav.Link><Link to="/topics">Recettes</Link></Nav.Link>
+                    <NavDropdown 
                         id="dropdown-basic nav-dropdown" 
                         style={{backgroundColor:'#73a47',color: '#fff'}} 
                         className="white" 
                         title={
                           <span style={{color: '#fff'}}>Catégories</span>
                         }
-                  >
+                    >
                      <NavDropdown.Item><Link style={{color: 'black'}} to="categories/petit-dejeuner">Petit Déjeuner</Link></NavDropdown.Item>
                       <NavDropdown.Item><Link style={{color: 'black'}} to="categories/dejeuner">Déjeuner</Link></NavDropdown.Item>
                       <NavDropdown.Item><Link style={{color: 'black'}} to="categories/diner">Diner</Link></NavDropdown.Item>
@@ -48,13 +48,13 @@ export default class NavBar extends React.Component {
     else {
       return (
         <Navbar style={{backgroundColor:"#f64152",color:'#fff'}} collapseOnSelect expand="lg" >
-          <Navbar.Brand><img style={{width: '50px',height: '50px'}} src={logo} /><Link to="/"><strong> Recetti</strong></Link></Navbar.Brand>
+          <Navbar.Brand><img style={{width: '50px',height: '50px',marginTop: '-6px'}} src={logo} /><Link to="/"><strong> Recetti</strong></Link></Navbar.Brand>
             <Navbar.Toggle style={{backgroundColor: '#fff',borderColor: '#fff'}} aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                  <Nav className="mr-auto">
-                  <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                  <Nav.Link><Link to="/about">About</Link></Nav.Link>
-                  <Nav.Link><Link to="/topics">Topics</Link></Nav.Link>
+                  <Nav.Link><Link to="/">Acceuil</Link></Nav.Link>
+                  <Nav.Link><Link to="/about">Chefs</Link></Nav.Link>
+                  <Nav.Link><Link to="/topics">Recettes</Link></Nav.Link>
                     <NavDropdown 
                         id="dropdown-basic nav-dropdown" 
                         style={{backgroundColor:'#73a47',color: '#fff'}} 
