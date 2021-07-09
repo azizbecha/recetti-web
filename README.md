@@ -8,26 +8,24 @@
 <p align="center">
   <img  src="https://img.shields.io/github/stars/azizvirus/recetti-web?color=f64152" />
   <img src="https://img.shields.io/github/contributors/AzizVirus/recetti-web?color=f64152" />
-<img src="https://img.shields.io/github/last-commit/AzizVirus/MoonMeet-Web?color=f64152" />
+  <img src="https://img.shields.io/github/last-commit/AzizVirus/MoonMeet-Web?color=f64152" />
   <img src="https://visitor-badge.laobi.icu/badge?page_id=AzizVirus.recetti-web&color=f64152" />
-
   <img src="https://img.shields.io/github/languages/count/azizvirus/recetti-web?color=f64152" />
-<img src="https://img.shields.io/github/languages/top/azizvirus/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/languages/top/azizvirus/recetti-web?color=f64152" />
 
-<img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
-<img  src="https://img.shields.io/github/issues/AzizVirus/recetti-web?color=f64152" />
-<img  src="https://img.shields.io/github/issues-pr/AzizVirus/recetti-web?color=f64152" />
-
-
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
+  <img  src="https://img.shields.io/github/issues/AzizVirus/recetti-web?color=f64152" />
+  <img  src="https://img.shields.io/github/issues-pr/AzizVirus/recetti-web?color=f64152" />
 </p>
 
 ## TO-DO
 
 | Task               |
 | ------------------ |
-| Fix The Navbar     |
-| Fix Home Page      |
-| Fix Login/Register |
+| Fix Register       |
+| Complete Home Page |
+| Start The Login    |
+| ------------------ |
 
 
 # Getting Started with Create React App

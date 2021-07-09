@@ -18,7 +18,7 @@ var user = firebase.auth().currentUser;
 export default class Register extends React.Component {
     render() {
        return  (         
-        <div class="signup-form">
+        <div class="signup-form body">
         <form method="post">
             <h2>Créer un compte</h2>
             <p>Créez un compte et rejoignez Recetti !</p>
@@ -26,8 +26,8 @@ export default class Register extends React.Component {
             <div class="form-group">
       
                 <div class="row">
-                    <div class="col-xs-6"><input type="text" class="form-control" name="firstname" placeholder="Nom" required="required" /></div>
-                    <div class="col-xs-6"><input type="text" class="form-control" name="lastname" placeholder="Prénom" required="required" /></div>
+                    <div class="col-sm-6"><input type="text" class="form-control" name="firstname" placeholder="Nom" required="required" /></div>
+                    <div class="col-sm-6"><input type="text" class="form-control" name="lastname" placeholder="Prénom" required="required" /></div>
                 </div>        	
             </div>
             <div class="form-group">
