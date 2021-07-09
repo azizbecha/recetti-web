@@ -44,6 +44,6 @@
 - To build a stable & optimized release (npm run build)
 
 ### 2 - To contribute:
-- Add reasonable features and/or fixes
+- Add/Make/Suggest reasonable features and/or fixes
 - Send Pull Request with a good commit message & clear description
-- You can also give suggestions and/or report bugs/issues
+- You can also report bugs/issues in the issues section
