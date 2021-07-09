@@ -25,7 +25,7 @@
 | Fix Register       |
 | Complete Home Page |
 | Start The Login    |
-| ------------------ |
+
 
 
 # Getting Started with Create React App
