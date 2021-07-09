@@ -21,6 +21,7 @@ import Register from "./components/Register";
 import Chefs from "./components/Chefs";
 import Recettes from "./components/Recettes";
 import Forum from "./components/Forum";
+import Login from "./components/Login";
 
 export default class App extends React.Component {
   render() {
@@ -29,8 +30,12 @@ export default class App extends React.Component {
         <NavBar />
           <Switch>
 
-          <Route path="/register">
+           <Route path="/register">
               <Register />
+            </Route>
+
+            <Route path="/login">
+              <Login />
             </Route>
 
             <Route path="/forum">
