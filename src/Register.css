@@ -54,23 +54,18 @@
     font-weight: bold;
     
     border: none;
-    min-width: 140px;
+    width: 100%
 }
 
 .signup-form a{
     color: #fff;
-    text-decoration: underline;
+    text-decoration: none;
+    font-weight: bold;
 }
 .signup-form a:hover{
     text-decoration: none;
 }
-.signup-form form a{
-    color: #3598dc;
-    text-decoration: none;
-}	
-.signup-form form a:hover{
-    text-decoration: underline;
-}
+
 .signup-form .hint-text {
     padding-bottom: 15px;
     text-align: center;

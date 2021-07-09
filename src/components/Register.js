@@ -43,7 +43,7 @@ export default class Register extends React.Component {
                 <input type="password" class="form-control" name="confirm_password" placeholder="Re-taper le mot de passe" required="required" />
             </div>        
             <div class="form-group">
-                <button type="submit" name="register" class="btn btn-primary btn-lg">Sign Up</button>
+                <button type="submit" name="register" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> Rejoindre</button>
             </div>
         </form>
         <div class="hint-text">Vous avez déja un compte ? <a href="login">Se Connecter</a></div>
