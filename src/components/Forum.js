@@ -12,6 +12,7 @@ export default function Forum() {
     let match = useRouteMatch();
   
     return (
+      
       <div>
         <h2>forum</h2>
   
