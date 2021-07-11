@@ -16,6 +16,9 @@ import logo from '../assets/img/recetti-logo.png';
 var user = firebase.auth().currentUser;
 
 export default class Login extends React.Component {
+    componentDidMount() {
+        document.title = 'Se Connecter a Recetti';
+      }
     render() {
        return  (      
               

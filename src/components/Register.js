@@ -14,6 +14,9 @@ var user = firebase.auth().currentUser;
 
 
 export default class Register extends React.Component {
+    componentDidMount() {
+        document.title = 'Rejoindre Recetti';
+      }
     render() {
        return  (         
         <div class="signup-form body">
