@@ -22,6 +22,7 @@ import Chefs from "./components/Chefs";
 import Recettes from "./components/Recettes";
 import Forum from "./components/Forum";
 import Login from "./components/Login";
+import Search from "./components/Search";
 
 export default class App extends React.Component {
   render() {
@@ -48,6 +49,10 @@ export default class App extends React.Component {
 
             <Route path="/recettes">
               <Recettes />
+            </Route>
+
+            <Route path="/search">
+              <Search />
             </Route>
 
             <Route path="/">
