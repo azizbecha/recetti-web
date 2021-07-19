@@ -49,7 +49,6 @@ REACT_APP_storageBucket=<your_storage_bucket>
 REACT_APP_messagingSenderId=<your_messaging_sender_id>
 REACT_APP_appId=<your_app_id>
 REACT_APP_measerumentId=<your_measurement_id>
-
 ```
 - Set up the development environment (npm install)
 - Start developing (npm start)
