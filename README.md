@@ -44,7 +44,7 @@
 REACT_APP_apiKey=<your_api_key>
 REACT_APP_authDomain=<your_auth_domain>
 REACT_APP_databaseURL=<your_database_url>
-REACT_APP_projectId=<your_project_if>
+REACT_APP_projectId=<your_project_id>
 REACT_APP_storageBucket=<your_storage_bucket>
 REACT_APP_messagingSenderId=<your_messaging_sender_id>
 REACT_APP_appId=<your_app_id>
