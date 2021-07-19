@@ -7,40 +7,32 @@ import {
     useRouteMatch,
     useParams
   } from "react-router-dom";
-
+import {Container} from "react-bootstrap"
 export default function Forum() {
     let match = useRouteMatch();
-  
+    document.title = "Forum - Recetti"
     return (
       
       <div>
-        <h2>forum</h2>
-  
-        <ul>
-          <li>
-            <Link to={`${match.url}/components`}>Components</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/props-v-state`}>
-              Props v. State
-            </Link>
-          </li>
-        </ul>
-
-        <Switch>
-          <Route path={`${match.path}/:topicId`}>
-            <Topic />
+        <Container fluid>
+         <Switch> 
+          <Route path={`${match.path}/:forumId`}>
+            <Forum />
           </Route>
-          <Route path={match.path}>
-            <h3>Please select a topic.</h3>
+          <Route path={match.path}>             
+            <h1 class="text-center mt-2">Forum</h1>                
+             <Link to={`${match.url}/Fast-Food`}>Fast Food</Link>
+              <br />
+             <Link to={`${match.url}/props-v-state`}>Diners</Link>
           </Route>
-        </Switch>
+         </Switch>
+        </Container>
       </div>
     );
   }
   
-function Topic() {
-    let { topicId } = useParams();
-    return <h3>Requested topic ID: {topicId}</h3>;
-  }
+function Forum() {
+    let { forumId } = useParams();
+    return <h3>Requested topic ID: {forumId}</h3>;
+}
 

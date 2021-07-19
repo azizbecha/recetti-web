@@ -1,52 +1,95 @@
+/* Import Google Sans font */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 * {
   scroll-behavior: smooth;
   font-family: "Google Sans", "Sans Serif";
 }
+
+::-moz-selection { /* Code for Firefox */
+  color: #f64152;
+  background: white;
+}
+
+::selection {
+  color: #fff;
+  background: #f64152;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10px;
+  
+}
+
+::-webkit-scrollbar-track {
+
+  background-color: #35363A; 
+  
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f64152; 
+  border-radius: 10px;
+  
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f64152; 
+  border-radius: 10px;
+}
+
+
+
 #nav-dropdown{
   color: white;
   font-weight: bold;
   background-color: red;
 }
+
 .btn-primary{
     background-color: #f64152;
     border-color: #f64152;
 }
+
 .btn-primary:hover {
     color: #fff;
     background-color: #f72439;
     border-color: #f72439;
-  }
+}
   
-  .btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .btn-primary.focus {
     box-shadow: 0 0 0 0.2rem #cc1427;
-  }
+}
   
-  .btn-primary.disabled, .btn-primary:disabled {
+.btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
     background-color: #cc1427;
     border-color: #cc1427;
-  }
+}
   
-  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-  .show > .btn-primary.dropdown-toggle {
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
     color: #fff;
     background-color: #f64152;
     border-color: #f64152;
-  }
+}
   
-  .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-  .show > .btn-primary.dropdown-toggle:focus {
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem #f64152;
-  }
+}
+
 nav {
     background-color: #f64152;
     color: #fff;
     font-weight:bold;
 }
+
 nav a {
     color: #fff;
 }
+
 html,body,h1,h2,h3,h4,h5,h6,p,span,a {
   font-family: 'Open Sans', sans-serif;
   word-wrap: break-word;
@@ -58,29 +101,42 @@ html,body,h1,h2,h3,h4,h5,h6,p,span,a {
     height:60px;
     border-color:#f64152;
     border-width:3px;
+    transition: 0.3s;
 }
+
 .search_form:focus {
     border-radius:25px;
     border-color:#ff4456;
     border-width:3px;
 }
+
 .card img {
     width: 286px;
     height:180px;
 }
+
 .card:hover {
-  box-shadow: 10px 10px 5px #888;
+  box-shadow: 0.5px 1px 2px #888;
+  transition: 0.5s;
 }
+
 footer {
     background-color: #f64152;
 }
+
 a:hover {
   color: #fff;
   text-decoration: none;
 }
+
+.rose {
+  color: #f64152;
+}
+
 .badge-primary {
   background-color: #f64152;
 }
+
 .badge-primary[href]:hover, .badge-primary[href]:focus {
   color: #fff;
   text-decoration: none;
@@ -98,10 +154,10 @@ a:hover {
   bottom: 50px;
   right: 20px;
   box-shadow: 2px 2px 1px 1px #0000;
-  
   visibility: hidden;
   z-index: 1000;
 }
+
 #button::after {
   content: "\f077";
   font-family: 'FontAwesome';
@@ -112,24 +168,21 @@ a:hover {
   color: #fff;
   box-shadow: 2px 2px 1px 1px #0000;
 }
+
 #button:hover {
   cursor: pointer;
   background-color: #333;
 }
+
 #button:active {
   background-color: #555;
 }
+
 #button.show {
   opacity: 1;
   visibility: visible;
 }
+
 .view-recipe:hover {
   margin-left:50px;
-}
-/* slider */
-.slideshow {
-  width: 350px;
-  height: 200px;
-  overflow: hidden;
-  border: 3px solid #F2F2F2;
 }

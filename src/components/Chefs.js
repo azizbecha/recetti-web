@@ -11,16 +11,24 @@ import "firebase/firestore";
 import "firebase/storage";
 import "firebase/auth";
 import app from "./auth/Firebase"
-import logo from '../assets/img/recetti-logo.png';
+import logo from './assets/img/recetti-logo.png';
 var user = firebase.auth().currentUser;
 
 
 export default class Chefs extends React.Component {
+  componentDidMount() {
+    document.title = 'Chefs - Recetti';
+  }
     render() {
       
        return  (
-           
-               <h1>chefs</h1>
+
+              <div>
+                <center>
+                  <br />
+                    <h1>Chefs</h1>
+                </center>
+              </div>
              
        );
        

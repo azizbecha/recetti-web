@@ -1,6 +1,6 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap'
-import Cover from "../assets/img/recetti-cover.png";
+import Cover from "./assets/img/recetti-cover.png";
 export default function MainCarousel() {
     return (
         <Carousel slide

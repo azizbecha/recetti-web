@@ -1,3 +1,11 @@
+/*
+ * ------------------------------------------|
+ * Recetti Project Copyright 2021 AzizVirus. |
+ * Github: AzizVirus/recetti-web             |
+ * Licenced under the MIT License.           |
+ * ------------------------------------------|
+ */
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -6,14 +14,15 @@ import {
   Link
 } from "react-router-dom";
 
+// Import Bootstrap 4
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import CSS
 import './App.css';
 import './index.css';
 
-import {Container} from 'react-bootstrap'
-
-import MainCarousel from './components/MainCarousel'
+// Import all our Components to add them to the Route.
+import MainCarousel from './components/MainCarousel';
 import NavBar from "./components/Navbar";
 import Home from "./components/Home";
 import Footer from './components/Footer';
@@ -23,14 +32,15 @@ import Recettes from "./components/Recettes";
 import Forum from "./components/Forum";
 import Login from "./components/Login";
 import Search from "./components/Search";
+import Categories from "./components/Categories";
 
-export default class App extends React.Component {
-  render() {
+const App =  () =>  {
+  
     return (
       <Router>
         <NavBar />
           <Switch>
-
+             
            <Route path="/register">
               <Register />
             </Route>
@@ -55,15 +65,20 @@ export default class App extends React.Component {
               <Search />
             </Route>
 
+            <Route path="/categories">
+              <Categories />
+            </Route>
+
             <Route path="/">
               <MainCarousel />
               <Home />
               <Footer />
             </Route>
-
           </Switch>
-        
       </Router>
-    );
-  }
-}
+
+    ); // end return
+} // end function
+
+
+export default App;

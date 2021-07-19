@@ -15,4 +15,4 @@ Please explain the changes you made here.
 - [ ] Add general Title.
 - [ ] Add a detailed description about the issue.
 - [ ] Be sure that this is the first time the issue is open.
-- [ ] You can also add some screenshots/links.
+- [ ] You can also attach some screenshots/links.
