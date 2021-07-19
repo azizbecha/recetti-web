@@ -1,7 +1,7 @@
 # Recetti
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/63454940/124963554-e2456380-e017-11eb-927a-b27a838aae80.png" width="350" />
+  <img src="https://user-images.githubusercontent.com/63454940/126222387-9987ef4f-aae6-4656-b3aa-6ab575775f80.png" width="350" />
 <h3 align="center">Votre meilleur espace de découvrir et partager des recettes.</h3>
 </p>
 
