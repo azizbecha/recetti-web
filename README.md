@@ -20,11 +20,11 @@
 
 ## TO-DO
 
-| Task               |
-| ------------------ |
-| Fix Register       |
-| Complete Home Page |
-| Start The Login    |
+| Task                        |
+| --------------------------- |
+| Start auth Login & Register |
+| Create Firebase DB          |
+| Publish the UI/UX           |
 
 
 
