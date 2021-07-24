@@ -42,14 +42,14 @@
 - Create Firebase Project
 - Create .env file and fill in the blanks with your credentials: 
 ```
-REACT_APP_apiKey=<your_api_key>
-REACT_APP_authDomain=<your_auth_domain>
-REACT_APP_databaseURL=<your_database_url>
-REACT_APP_projectId=<your_project_id>
-REACT_APP_storageBucket=<your_storage_bucket>
-REACT_APP_messagingSenderId=<your_messaging_sender_id>
-REACT_APP_appId=<your_app_id>
-REACT_APP_measerumentId=<your_measurement_id>
+REACT_APP_apiKey=<your_firebase_api_key>
+REACT_APP_authDomain=<your_firebase_auth_domain>
+REACT_APP_databaseURL=<your_firebase_database_url>
+REACT_APP_projectId=<your_firebase_project_id>
+REACT_APP_storageBucket=<your_firebase_storage_bucket>
+REACT_APP_messagingSenderId=<your_firebase_messaging_sender_id>
+REACT_APP_appId=<your_firebase_app_id>
+REACT_APP_measerumentId=<your_firebase_measurement_id>
 ```
 - Set up the development environment (npm install)
 - Start developing (npm start)
