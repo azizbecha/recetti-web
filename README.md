@@ -39,6 +39,7 @@
 ### 1 - To install the project & develop:
 - Clone the project (git clone https://github.com/azizvirus/recetti-web.git)
 - Go to the project folder (cd recetti-web)
+- Create Firebase Project
 - Create .env file and fill in the blanks with your credentials: 
 ```
 REACT_APP_apiKey=<your_api_key>
