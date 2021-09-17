@@ -7,18 +7,13 @@ import {
     useRouteMatch,
     useParams
   } from "react-router-dom";
-
 import {Container} from 'react-bootstrap'
 import '../index.css';
 import firebase from "firebase/app";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import app from "./auth/Firebase"
-var user = firebase.auth().currentUser;
-
-export default class Home extends React.Component {
+class Home extends React.Component {
   componentDidMount() {
     AOS.init({
       duration : 500
@@ -67,3 +62,5 @@ export default class Home extends React.Component {
     )
   }
 }
+
+export default Home

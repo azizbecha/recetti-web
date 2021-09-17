@@ -12,7 +12,7 @@ import {message} from 'antd';
 import "antd/dist/antd.css";
 
 const AddRecipe = () => {
-
+    document.title = "Ajouter une Recette - Recetti";
     const [image , setImage] = useState('');
     const nameRef = useRef();
     const ingRef = useRef();

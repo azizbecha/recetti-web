@@ -19,6 +19,7 @@ import app, {db} from "./auth/Firebase"
 import logo from './assets/images/recetti-logo.png';
 import {Container} from 'react-bootstrap'
 export default function Recettes() {
+  document.title = "Recettes - Recetti";
   let match = useRouteMatch();
   return (
     <div>

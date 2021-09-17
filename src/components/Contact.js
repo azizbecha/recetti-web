@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {useHistory, Link} from 'react-router-dom'
 import {Container} from 'react-bootstrap';
-import database from './auth/Firebase';
+import {useFireStore} from './auth/Firebase';
 import firebase from 'firebase/app';
 import "firebase/firestore";
 import "firebase/storage";
@@ -11,6 +11,7 @@ import {message} from 'antd';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
 const Contact = () => {
+    document.title = "Contact - Recetti";
     const firstNameRef = useRef();
     const lastNameRef = useRef();
     const emailRef = useRef();
@@ -41,7 +42,7 @@ const Contact = () => {
         var messageId = makeId(20);
        // try {
             message.info("Veuillez attendre ...", 2.5);
-            await firebase.database().ref('messages').child(messageId).set({
+            await useFireStore.collection('messages').doc(messageId).set({
                 date: Date.now(),
                 firstname: firstNameRef.current.value,
                 lastname: lastNameRef.current.value,

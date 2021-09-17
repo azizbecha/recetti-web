@@ -19,6 +19,7 @@ import { message } from 'antd';
 import 'antd/dist/antd.css'
 
 const Register = () => {
+  document.title = "S'inscrire - Recetti";
   let history = useHistory();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
