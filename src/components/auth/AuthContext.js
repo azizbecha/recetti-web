@@ -35,6 +35,14 @@ export default function AuthProvider({ children }) {
     return currentUser.updatePassword(password);
   };
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+    return unsubscribe;
+  }, []);
+
   const value = {
     currentUser,
     signup,

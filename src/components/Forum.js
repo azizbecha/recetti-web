@@ -20,7 +20,7 @@ export default function Forum() {
             <Forum />
           </Route>
           <Route path={match.path}>             
-            <h1 class="text-center mt-2">Forum</h1>                
+            <h1 className="text-center mt-2">Forum</h1>                
              <Link to={`${match.url}/Fast-Food`}>Fast Food</Link>
               <br />
              <Link to={`${match.url}/props-v-state`}>Diners</Link>
@@ -31,8 +31,8 @@ export default function Forum() {
     );
   }
   
-function Forum() {
+/*function Forum() {
     let { forumId } = useParams();
     return <h3>Requested topic ID: {forumId}</h3>;
-}
+}*/
 

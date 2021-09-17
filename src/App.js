@@ -14,40 +14,56 @@ import {
   Link
 } from "react-router-dom";
 
-// Import Bootstrap 4
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {message} from 'antd';
+import "antd/dist/antd.css";
 
 // Import CSS
-import './App.css';
+import './components/styles/Login.css'
+import './components/styles/Register.css'
+// Import Bootstrap 4
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
+import firebase from 'firebase/app';
+import AuthProvider, {useAuth} from './components/auth/AuthContext'
 // Import all our Components to add them to the Route.
 import MainCarousel from './components/MainCarousel';
-import NavBar from "./components/Navbar";
-import Home from "./components/Home";
+import NavBar from './components/Navbar';
+import Home from './components/Home';
 import Footer from './components/Footer';
-import Register from "./components/Register";
-import Chefs from "./components/Chefs";
-import Recettes from "./components/Recettes";
-import Forum from "./components/Forum";
-import Login from "./components/Login";
-import Search from "./components/Search";
-import Categories from "./components/Categories";
-
-const App =  () =>  {
-  
-    return (
+import Register from './components/Register';
+import Chefs from './components/Chefs';
+import Recettes from './components/Recettes';
+import Forum from './components/Forum';
+import Login from './components/Login';
+import Search from './components/Search';
+import Categories from './components/Categories';
+import AddRecipe from './components/AddRecipe';
+import FAQ from './components/FAQ';
+import NotFound from './components/NotFound'
+import ForgotPassword from "./components/ForgotPassword"
+import PrivateRoute from "./components/auth/PrivateRoute";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import Contact from './components/Contact'
+const App = () =>  {
+  var user = firebase.auth().currentUser;
+  return (
+    <AuthProvider>
       <Router>
         <NavBar />
-          <Switch>
-             
-           <Route path="/register">
-              <Register />
+          <Switch>  
+            <ProtectedRoute path="/register" component={Register} />
+            <ProtectedRoute path="/login" component={Login} />
+            <ProtectedRoute
+              path="/forgot-password"
+              component={ForgotPassword}
+            />
+            <PrivateRoute path="/add-recipe" component={AddRecipe} />
+            <Route path="/faq">
+              <FAQ />
             </Route>
 
-            <Route path="/login">
-              <Login />
-            </Route>
+            <PrivateRoute path="/contact" component={Contact} />
 
             <Route path="/forum">
               <Forum />
@@ -69,16 +85,16 @@ const App =  () =>  {
               <Categories />
             </Route>
 
-            <Route path="/">
+            <Route exact path="/">
               <MainCarousel />
               <Home />
               <Footer />
             </Route>
+            <Route component={NotFound} />
           </Switch>
       </Router>
-
-    ); // end return
+    </AuthProvider>
+  ); // end return
 } // end function
-
 
 export default App;

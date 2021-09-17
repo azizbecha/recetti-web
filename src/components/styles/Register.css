@@ -8,7 +8,6 @@
     background: #f2f2f2;
     box-shadow: none !important;
     border: none;
-    
 }
 .form-control:focus{
     background: #e2e2e2;
@@ -20,7 +19,7 @@
     width: 390px;
     margin: 30px auto;
 }
-.signup-form form{
+.signup-form .form{
     color: #999;
     border-radius: 3px;
     margin-bottom: 15px;
@@ -52,7 +51,6 @@
 .signup-form .btn{        
     font-size: 16px;
     font-weight: bold;
-    
     border: none;
     width: 100%
 }

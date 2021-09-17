@@ -1,5 +1,4 @@
 # Recetti
-### On hold
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/63454940/126222387-9987ef4f-aae6-4656-b3aa-6ab575775f80.png" width="350" />
@@ -9,7 +8,7 @@
 <p align="center">
   <img  src="https://img.shields.io/github/stars/azizvirus/recetti-web?color=f64152" />
   <img src="https://img.shields.io/github/contributors/AzizVirus/recetti-web?color=f64152" />
-  <img src="https://img.shields.io/github/last-commit/AzizVirus/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/last-commit/AzizVirus/MoonMeet-Web?color=f64152" />
   <img src="https://visitor-badge.laobi.icu/badge?page_id=AzizVirus.recetti-web&color=f64152" />
   <img src="https://img.shields.io/github/languages/count/azizvirus/recetti-web?color=f64152" />
   <img src="https://img.shields.io/github/languages/top/azizvirus/recetti-web?color=f64152" />
@@ -21,11 +20,11 @@
 
 ## TO-DO
 
-| Task                        |
-| --------------------------- |
-| Start auth Login & Register |
-| Create Firebase DB          |
-| Publish the UI/UX           |
+| Task               |
+| ------------------ |
+| Fix Register       |
+| Complete Home Page |
+| Start The Login    |
 
 
 
@@ -40,17 +39,16 @@
 ### 1 - To install the project & develop:
 - Clone the project (git clone https://github.com/azizvirus/recetti-web.git)
 - Go to the project folder (cd recetti-web)
-- Create Firebase Project
-- Create .env file and fill in the blanks with your credentials: 
+- Create .env file and full in the blanks with your credentials: 
 ```
-REACT_APP_apiKey=<your_firebase_api_key>
-REACT_APP_authDomain=<your_firebase_auth_domain>
-REACT_APP_databaseURL=<your_firebase_database_url>
-REACT_APP_projectId=<your_firebase_project_id>
-REACT_APP_storageBucket=<your_firebase_storage_bucket>
-REACT_APP_messagingSenderId=<your_firebase_messaging_sender_id>
-REACT_APP_appId=<your_firebase_app_id>
-REACT_APP_measerumentId=<your_firebase_measurement_id>
+REACT_APP_apiKey=<your_api_key>
+REACT_APP_authDomain=<your_auth_domain>
+REACT_APP_databaseURL=<your_database_url>
+REACT_APP_projectId=<your_project_id>
+REACT_APP_storageBucket=<your_storage_bucket>
+REACT_APP_messagingSenderId=<your_messaging_sender_id>
+REACT_APP_appId=<your_app_id>
+REACT_APP_measerumentId=<your_measurement_id>
 ```
 - Set up the development environment (npm install)
 - Start developing (npm start)
