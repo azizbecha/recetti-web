@@ -8,18 +8,18 @@ import {
     useParams
 } from "react-router-dom";
 
-import "../index.css";
+import "../../index.css";
 
-import Footer from './Footer';
+import Footer from '../Footer';
 
 import {Container, Row} from "react-bootstrap";
 
-import logo from "./assets/images/recetti-logo.png";
-import PetitDej from "./assets/images/petit-dej.jpg";
-import Dej from './assets/images/dej.jpg';
-import Diner from './assets/images/diner.jpg';
-import Dessert from './assets/images/dessert.jpg'
-import ExportRecipes from './ExportRecipes';
+import logo from "../assets/images/recetti-logo.png";
+import PetitDej from "../assets/images/petit-dej.jpg";
+import Dej from '../assets/images/dej.jpg';
+import Diner from '../assets/images/diner.jpg';
+import Dessert from '../assets/images/dessert.jpg'
+import ExportRecipes from '../ExportRecipes';
 export default function Categories() {
     let match = useRouteMatch();
     document.title = "Catégories - Recetti";

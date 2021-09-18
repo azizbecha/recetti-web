@@ -30,7 +30,6 @@
 | Add 'ExportRecipes' component to the homepage                |
 | Convert CSS code to native components with styled-components |
 | Improve the UI of See Recipe components                      |
-| Arrange the files/folders structure inside src/              |
 | Add the category filter                                      |
 | Add MyProfile Component                                      |
 | Design the 404 not found page component                      |

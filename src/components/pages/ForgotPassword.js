@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "./auth/AuthContext";
+import { useAuth } from "../auth/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-import logo from './assets/images/reset-email.svg'
+import logo from '../assets/images/reset-email.svg'
 // ant design component call
 import styled from "styled-components";
 import { Row, message } from "antd";
-import Footer from './Footer'
+import Footer from '../Footer'
 const ForgotPassword = () => {
   document.title = "Récupérer votre mot de passe - Recetti";
   const emailRef = useRef();

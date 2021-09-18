@@ -1,12 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {useHistory, Link} from 'react-router-dom'
 import {Container} from 'react-bootstrap';
-import {useFireStore} from './auth/Firebase';
-import firebase from 'firebase/app';
-import "firebase/firestore";
-import "firebase/storage";
-import "firebase/auth";
-import app from "./auth/Firebase"
+import {useFireStore} from '../auth/Firebase';
 import {message} from 'antd';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';

@@ -7,7 +7,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import {useFireStore} from './auth/Firebase'
+import {useFireStore} from '../auth/Firebase'
 const Search = () =>{
   let match = useRouteMatch();
   return (

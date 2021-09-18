@@ -2,19 +2,16 @@ import React, {useState} from 'react';
 import { Link, useHistory } from "react-router-dom";
 
 // Components
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 // Styles
-import '../index.css';
-import "./styles/Register.css"
+import '../../index.css';
+import "../styles/Register.css"
 
 // Firebase
-import {db} from './auth/Firebase';
+import {useFireStore} from '../auth/Firebase';
 import firebase from 'firebase/app';
-import "firebase/firestore";
-import "firebase/storage";
-import "firebase/auth";
-import app from "./auth/Firebase"
+
 import { message } from 'antd';
 import 'antd/dist/antd.css'
 
@@ -36,7 +33,7 @@ const Register = () => {
       firebase.auth().signInWithEmailAndPassword(email, password);
       var user = firebase.auth().currentUser;
       var uid = user.uid;
-      db.collection('users').doc(uid).set(
+      useFireStore.collection('users').doc(uid).set(
         {
           firstname : firstname,
           lastname : lastname,

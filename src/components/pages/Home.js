@@ -8,7 +8,7 @@ import {
     useParams
   } from "react-router-dom";
 import {Container} from 'react-bootstrap'
-import '../index.css';
+import '../../index.css';
 import firebase from "firebase/app";
 import AOS from "aos";
 import "aos/dist/aos.css";

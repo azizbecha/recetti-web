@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "./auth/AuthContext";
+import { useAuth } from "../auth/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-import Footer from './Footer'
+import Footer from '../Footer'
 // ant design component call
 import { message } from "antd";
-import './styles/Login.css';
-import '../App.css';
-import logo from './assets/images/recetti-logo.png';
+import '../styles/Login.css';
+import '../../App.css';
+import logo from '../assets/images/recetti-logo.png';
 //import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 const Login = () => {
   document.title = "Se Connecter - Recetti";

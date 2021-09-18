@@ -29,22 +29,22 @@ import AuthProvider, {useAuth} from './components/auth/AuthContext'
 // Import all our Components to add them to the Route.
 import MainCarousel from './components/MainCarousel';
 import NavBar from './components/Navbar';
-import Home from './components/Home';
+import Home from './components/pages/Home';
 import Footer from './components/Footer';
-import Register from './components/Register';
-import Chefs from './components/Chefs';
-import Recettes from './components/Recettes';
-import Forum from './components/Forum';
-import Login from './components/Login';
-import Search from './components/Search';
-import Categories from './components/Categories';
-import AddRecipe from './components/AddRecipe';
-import FAQ from './components/FAQ';
-import NotFound from './components/NotFound'
-import ForgotPassword from "./components/ForgotPassword"
+import Register from './components/pages/Register';
+import Chefs from './components/pages/Chefs';
+import Recettes from './components/pages/Recettes';
+import Forum from './components/pages/Forum';
+import Login from './components/pages/Login';
+import Search from './components/pages/Search';
+import Categories from './components/pages/Categories';
+import AddRecipe from './components/pages/AddRecipe';
+import FAQ from './components/pages/FAQ';
+import NotFound from './components/pages/NotFound'
+import ForgotPassword from "./components/pages/ForgotPassword"
 import PrivateRoute from "./components/auth/PrivateRoute";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import Contact from './components/Contact'
+import Contact from './components/pages/Contact'
 const App = () =>  {
   var user = firebase.auth().currentUser;
   return (

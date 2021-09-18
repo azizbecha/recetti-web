@@ -1,10 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
-import app, {db, useFireStore, useFireStorage} from './auth/Firebase';
-import {useAuth} from './auth/AuthContext';
-import firebase from 'firebase/app';
-import "firebase/firestore";
-import "firebase/storage";
-import "firebase/auth";
+import app, {db, useFireStore, useFireStorage} from '../auth/Firebase';
+import {useAuth} from '../auth/AuthContext';
 import {useHistory} from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';

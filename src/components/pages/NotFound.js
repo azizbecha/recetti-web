@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/NotFound.css'
+import '../styles/NotFound.css'
 const NotFound = () => {
     document.title = "Page non trouvée - Recetti";
     return (

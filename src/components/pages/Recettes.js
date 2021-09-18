@@ -8,11 +8,11 @@ import {
   useParams
 } from "react-router-dom";
 import styled from "styled-components";
-import {useFireStore} from "./auth/Firebase"
+import {useFireStore} from "../auth/Firebase"
 import {Container, Row, Alert} from 'react-bootstrap';
-import Footer from './Footer';
+import Footer from '../Footer';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../index.css'
+import '../../index.css'
 export default function Recettes() {
   document.title = "Recettes - Recetti";
   let match = useRouteMatch();
