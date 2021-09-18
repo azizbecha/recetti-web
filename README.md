@@ -19,16 +19,21 @@
 </p>
 
 ## TO-DO
- _____________________________________________________________
-| Task                                                        |
-| ----------------------------------------------------------- |
-| Complete 'See recipe' component                             |
-| Complete Search component                                   |
-| Add FAQ                                                     |
-| Add links to the Footer/Navbar                              |
-| Customize SEO tags                                          |
-| Add 'ExportRecipes' component to the homepage               |
-| Convert CSS code to natie components with styled-components |
+ ______________________________________________________________
+| Task                                                         |
+| ------------------------------------------------------------ |
+| Complete 'See recipe' component                              |
+| Complete Search component                                    |
+| Add FAQ                                                      |
+| Add links to the Footer/Navbar                               |
+| Customize SEO tags                                           |
+| Add 'ExportRecipes' component to the homepage                |
+| Convert CSS code to native components with styled-components |
+| Improve the UI of See Recipe components                      |
+| Arrange the files/folders structure inside src/              |
+| Add the category filter                                      |
+| Add MyProfile Component                                      |
+| Design the 404 not found page component                      |
 
 
 
@@ -41,9 +46,11 @@
 
 ## Development & Contributing
 ### 1 - To install the project & develop:
+
 - Clone the project (git clone https://github.com/azizvirus/recetti-web.git)
 - Go to the project folder (cd recetti-web)
 - Create config.js file inside src/components/auth and add your firebase credentials: 
+
 ```javascript
 const config = {
     apiKey: "xxxxxxx",
@@ -58,11 +65,13 @@ const config = {
 
 export default config
 ```
+
 - Set up the development environment (npm install)
 - Start developing (npm start)
 - To build a stable & optimized release (npm run build)
 
 ### 2 - To contribute:
+
 - Add/Make/Suggest reasonable features and/or fixes
 - Send Pull Request with a good commit message & clear description
 - You can also report bugs/issues in the issues section
