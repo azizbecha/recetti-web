@@ -19,28 +19,25 @@ const ExportRecipes = ({ category }) => {
         });
     };
 
-    // we use pull effect to ovoid memory leak
     pullData();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-
-          {sockets.map((socket, index) => {
-            return (
-                <div className="col-sm-4">
-                    <div class="card shadow">
-                        <img class="card-img-top" src={socket.image} alt={"Image de "+socket.name} />
-                        <div class="card-body">
-                            <h5 class="card-title">{socket.name}</h5>
-                            <p class="card-text">{socket.description}</p>
-                            <a href={`../recettes/${socket.category}/${socket.id}`} class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            );
-          })}
-        
+      {sockets.map((socket, index) => {
+        return (
+          <div className="col-sm-4">
+            <div class="card shadow">
+              <img class="card-img-top" src={socket.image} alt={"Image de "+socket.name} />
+              <div class="card-body">
+                  <h5 class="card-title">{socket.name}</h5>
+                  <p class="card-text">{socket.description}</p>
+                  <a href={`../recettes/${socket.category}/${socket.id}`} class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        );
+      })}    
     </>
   );
 };

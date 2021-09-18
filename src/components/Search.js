@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,83 +7,61 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-
+import {useFireStore} from './auth/Firebase'
 const Search = () =>{
+  let match = useRouteMatch();
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
-
       <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/topics">
-          <Topics />
-        </Route>
-        <Route path="/">
-          <Home />
+        <Route path={`${match.path}/:Category/:Keyword`}>
+          <SearchResult />
         </Route>
       </Switch>
-      </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-function About() {
-  return <h2>About</h2>;
-}
+function SearchResult() {
+  let { Category, Keyword } = useParams();
+  const [sockets, setSockets] = useState([]);
 
-function Topics() {
-  let match = useRouteMatch();
+  useEffect(() => {
+    const pullData = async () => {
+      return await useFireStore
+        .collection("bucket")
+        .doc("recipes")
+        .collection(`${Category}`)
+        .onSnapshot((snapshot) => {
+          const data = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setSockets(data);
+        });
+    };
+
+    pullData();
+  }, []);
 
   return (
-    <div>
-      <h2>Topics</h2>
-      <ul>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
-          </Link>
-        </li>
-      </ul>
-
-      {/* The Topics page has its own <Switch> with more routes
-          that build on the /topics URL path. You can think of the
-          2nd <Route> here as an "index" page for all topics, or
-          the page that is shown when no topic is selected */}
-      <Switch>
-        <Route path={`${match.path}/:topicId`}>
-          <Topic />
-        </Route>
-        <Route path={match.path}>
-          <h3>Please select a topic.</h3>
-        </Route>
-      </Switch>
-    </div>
+    <>
+      {sockets.map((socket, index) => {
+        return (
+            <div className="col-sm-4">
+                <div class="card shadow">
+                    <img class="card-img-top" src={socket.image} alt={"Image de "+socket.name} />
+                    <div class="card-body">
+                        <h5 class="card-title">{socket.name}</h5>
+                        <p class="card-text">{socket.description}</p>
+                        <Link to={`../../recettes/${socket.category}/${socket.id}`} class="btn btn-primary">Go somewhere</Link>
+                    </div>
+                </div>
+            </div>
+        );
+      })}
+    </>
   );
-}
-
-function Topic() {
-  let { topicId } = useParams();
-  return <h3>Requested topic ID: {topicId}</h3>;
 }
 
 export default Search;

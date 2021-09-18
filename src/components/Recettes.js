@@ -7,17 +7,12 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-//import 'bootstrap/dist/css/bootstrap.min.css';
-import "../index.css";
 import styled from "styled-components";
-import { Row, Card, Alert } from "antd";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/storage";
-import "firebase/auth";
-import app, {db} from "./auth/Firebase"
-import logo from './assets/images/recetti-logo.png';
-import {Container} from 'react-bootstrap'
+import {useFireStore} from "./auth/Firebase"
+import {Container, Row, Alert} from 'react-bootstrap';
+import Footer from './Footer';
+import 'bootstrap/dist/css/bootstrap.css';
+import '../index.css'
 export default function Recettes() {
   document.title = "Recettes - Recetti";
   let match = useRouteMatch();
@@ -42,7 +37,7 @@ const TousLesRecettes = () => {
 
   useEffect(() => {
     const pullBucketData = async () => {
-      return await db
+      return await useFireStore
         .collection("recipes")
         .onSnapshot((snapshot) => {
           const data = snapshot.docs.map((doc) => ({
@@ -53,40 +48,33 @@ const TousLesRecettes = () => {
           setSockets(data);
         });
     };
-
-    // we use pull effect to ovoid memory leak
-
     pullBucketData();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-      
-        <Container>
-          {sockets.map((socket, index) => {
-            return (
-          
-                <>
-                <img
-                  alt={socket.title}
-                  className="preview"
-                  src={socket.avatar}
-                />
-                <p>{socket.name}</p>
-                <p>{socket.description}</p>
-                <p>{socket.ingredients}</p>
-                </>
-            );
-          })}
-        </Container>
-        <Row>{error && <Alert message={error} type="info" />}</Row>
-      
+      <Container>
+        {sockets.map((socket, index) => {
+          return (
+              <>
+              <img
+                alt={socket.title}
+                className="preview"
+                src={socket.avatar}
+              />
+              <p>{socket.name}</p>
+              <p>{socket.description}</p>
+              <p>{socket.ingredients}</p>
+              </>
+          );
+        })}
+      </Container>
+      <Row>{error && <Alert message={error} type="info" />}</Row>
     </>
   );
 }
 
 const DetailsRecette = () => {
-
   let {RecetteID, Category} = useParams();
 
   const [recipeName, setRecipeName] = useState('');
@@ -97,8 +85,11 @@ const DetailsRecette = () => {
   const [recipeAddDate, setRecipeAddDate] = useState('');
   const [recipeID, setRecipeID] = useState('');
   const [recipeImage, setRecipeImage] = useState()
-
-  db.collection('bucket/')
+  function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
+  useFireStore.collection('bucket/')
     .doc('recipes')
     .collection(`${Category}`)
     .doc(`${RecetteID}`)
@@ -115,19 +106,57 @@ const DetailsRecette = () => {
       setRecipeImage(data.image)
     })
 
+  document.title = `${recipeName} - Recetti`
   return (
     <>
+      <Container>
+        <Heading>{recipeName}</Heading>
+        <Image src={recipeImage} alt={"Image de la recette: "+recipeName} />
 
-        <Container>
-          <h2 className="mt-5 font-weight-bold"> <i className="fa fa-tag rose"></i> {recipeName}</h2>
-          <br/>
-          <div className="mt-5 mb-4">
-            <Row>
-              <img src={recipeImage} />
-            </Row> 
-          </div> 
-        </Container>
+        <Text><i class="fa fa-tag rose"></i> Catégorie: <CategoryBadge className="badge-primary badge">{capitalize(recipeCategory)}</CategoryBadge></Text>
+        <Text><i class="fa fa-info-circle rose"></i> Description</Text>
+        <Description>{recipeDescription}</Description>
+
+        <Text><i class="fa fa-pencil rose"></i> Ingredients</Text>
+        <Ingredients>{recipeIngredients}</Ingredients>
+
+      </Container>
+      <Footer />
     </>
   );
- 
 }
+
+// Custom styles
+
+const Text = styled.h5`
+  color: #f64152;
+  font-weight: 900;
+  margin-top: 0.8em
+`
+
+const Heading = styled.h1`
+  color: black;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
+`
+
+const Image = styled.img`
+  width: 50%
+`
+
+const Description = styled.p`
+  font-weight: bold;
+`
+
+const Ingredients = styled.p`
+  font-weight: bold;
+`
+
+const CategoryBadge = styled.span`
+  padding-right: .6em;
+  padding-left: .6em;
+  padding-top: 0.2em;
+  border-radius: 10rem;
+`

@@ -1,5 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+
 export default function MainCarousel() {
+  const history = useHistory();
+  const [keyword, setKeyword] = useState('');
+  const [category, setCategory] = useState('');
+
+  const GoSearch = () => {
+    history.push(`search/${category}/${keyword}`)
+  }
   return (
     <div class="jumbotron text-center">
       <center>
@@ -11,20 +20,23 @@ export default function MainCarousel() {
           <hr />
           <p class="lead"><h1 class="font-weight-bold" data-aos="fade-up"><i className="fa fa-search" style={{color: '#f64152'}} aria-hidden="true"></i> Trouvez votre recette facilement</h1>
             <br />
-            <form data-aos="slide-up" className="form-group" action="search" method="get" style={{width:'80%'}}>
+            <form data-aos="slide-up" className="form-group" onSubmit={GoSearch} style={{width:'80%'}}>
               <div class="form-row">
                 <div class="form-group col-md-8">
                   <label for="inputCity">Recette</label>
-                  <input type="text" class="form-control search_form" id="inputCity" />
+                  <input value={keyword} onChange={(event) => setKeyword(event.target.value)} type="text" class="form-control search_form" id="inputCity" />
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputState">Catégorie</label>
-                  <select  id="inputState" class="form-control search_form">
-                    <option selected>Choose...</option>
-                    <option>...</option>
+                  <select value={category} onChange={(event) => setCategory(event.target.value)}  id="inputState" class="form-control search_form">
+                  <option selected disabled>Cliquez ici pour choisir la catégorie</option>
+                                    <option value="petit-dejeuner">Petit déjeuner</option>
+                                    <option value="dejeuner">Déjeuner</option>
+                                    <option value="diner">Diner</option>
+                                    <option value="dessert">Dessert</option>
                   </select>
                 </div>
-                <button class="btn btn-primary btn-block">Rechercher</button>
+                <button type="submit" class="btn btn-primary btn-block">Rechercher</button>
               </div>
             </form>
             <div className="btn-group font-weight-bold">

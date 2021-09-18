@@ -95,7 +95,7 @@ const AddRecipe = () => {
                         message.success("Votre recette a été bien ajoutée", 3);
                         emptyInputs();
                         setLoading(false);
-                        history.push(`recettes/${recipeId}`)
+                        history.push(`recettes/${categoryRef.current.value}/${recipeId}`)
             
                     }).catch(error => alert(error))
                 });
