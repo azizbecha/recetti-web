@@ -44,9 +44,8 @@
 - Clone the project (git clone https://github.com/azizvirus/recetti-web.git)
 - Go to the project folder (cd recetti-web)
 - Create config.js file inside src/components/auth and add your firebase credentials: 
-```
+```javascript
 const config = {
-  const config = {
     apiKey: "xxxxxxx",
     authDomain: "xxxxxxx",
     databaseURL: "xxxxxxx",
@@ -58,7 +57,6 @@ const config = {
 };
 
 export default config
-}
 ```
 - Set up the development environment (npm install)
 - Start developing (npm start)
