@@ -18,6 +18,7 @@
 .env.test.local
 .env.production.local
 
+# Firebase credentials config file
 config.js
 
 npm-debug.log*
