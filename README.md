@@ -21,15 +21,12 @@
  ______________________________________________________________
 | Task                                                         |
 | ------------------------------------------------------------ |
-| Complete 'See recipe' component                              |
 | Complete Search component                                    |
 | Add FAQ                                                      |
 | Add links to the Footer/Navbar                               |
 | Customize SEO tags                                           |
-| Add 'ExportRecipes' component to the homepage                |
 | Convert CSS code to native components with styled-components |
 | Improve the UI of See Recipe components                      |
-| Add the category filter                                      |
 | Add MyProfile Component                                      |
 | Design the 404 not found page component                      |
 
