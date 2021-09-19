@@ -23,15 +23,21 @@ const Search = () =>{
 
 
 function SearchResult() {
+  function capitalize(word) {
+    const lower = word.toLowerCase();
+    return word.charAt(0).toUpperCase() + lower.slice(1).replace("-", " ");
+  };
   let { Category, Keyword } = useParams();
   const [sockets, setSockets] = useState([]);
-
+  Keyword.replace("%20", " ");
+  capitalize(Keyword);
   useEffect(() => {
     const pullData = async () => {
       return await useFireStore
         .collection("bucket")
         .doc("recipes")
         .collection(`${Category}`)
+        .where("name", "==", Keyword)
         .onSnapshot((snapshot) => {
           const data = snapshot.docs.map((doc) => ({
             id: doc.id,

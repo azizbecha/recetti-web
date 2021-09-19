@@ -12,7 +12,6 @@
   <img src="https://visitor-badge.laobi.icu/badge?page_id=AzizVirus.recetti-web&color=f64152" />
   <img src="https://img.shields.io/github/languages/count/azizvirus/recetti-web?color=f64152" />
   <img src="https://img.shields.io/github/languages/top/azizvirus/recetti-web?color=f64152" />
-
   <img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
   <img src="https://img.shields.io/github/issues/AzizVirus/recetti-web?color=f64152" />
   <img src="https://img.shields.io/github/issues-pr/AzizVirus/recetti-web?color=f64152" />

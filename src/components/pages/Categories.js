@@ -97,7 +97,6 @@ function CategoryDetails() {
     
     return (
       <center>
-        <title> {capitalize(categoName)} - Recetti </title>
         <h2 className="mt-5 font-weight-bold"> <i className="fa fa-tag rose"></i> Catégorie: {capitalize(categoName)}</h2>
         <Container>
           <div className="mt-5 mb-4">

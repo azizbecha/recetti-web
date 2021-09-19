@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useFireStore } from "./auth/Firebase";
-
-const ExportRecipes = ({ category }) => {
+import {Link} from 'react-router-dom';
+import {Container, Row, Button, Card, Col} from 'react-bootstrap';
+const ExportRecipes = ({ category, limit }) => {
   const [sockets, setSockets] = useState([]);
-
+  
   useEffect(() => {
     const pullData = async () => {
       return await useFireStore
         .collection("bucket")
         .doc("recipes")
         .collection(`${category}`)
+        .limit(limit)
         .onSnapshot((snapshot) => {
           const data = snapshot.docs.map((doc) => ({
             id: doc.id,
@@ -23,22 +25,26 @@ const ExportRecipes = ({ category }) => {
   }, []);
 
   return (
-    <>
-      {sockets.map((socket, index) => {
-        return (
-          <div className="col-sm-4">
-            <div class="card shadow">
-              <img class="card-img-top" src={socket.image} alt={"Image de "+socket.name} />
-              <div class="card-body">
-                  <h5 class="card-title">{socket.name}</h5>
-                  <p class="card-text">{socket.description}</p>
-                  <a href={`../recettes/${socket.category}/${socket.id}`} class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        );
-      })}    
-    </>
+    <Container className="text-center">
+      <Row>
+        {sockets.map((socket, index) => {
+          return (
+            <Col sm={4} className="mb-4">
+              <Card>
+                <Card.Img variant="top" alt={"Image de "+socket.name} src={socket.image} />
+                <Card.Body>
+                  <Card.Title>{socket.name}</Card.Title>
+                  <Card.Text>
+                    {socket.description}
+                  </Card.Text>
+                  <Link to={`../recettes/${socket.category}/${socket.id}`}><Button className="px-3 py-2" style={{borderRadius: '2em'}} variant="primary"><i className="fa fa-eye"></i> Voir la recette</Button></Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
-export default function MainCarousel() {
+export default function MainHeading() {
   const history = useHistory();
   const [keyword, setKeyword] = useState('');
   const [category, setCategory] = useState('');
@@ -27,13 +27,12 @@ export default function MainCarousel() {
                   <input value={keyword} onChange={(event) => setKeyword(event.target.value)} type="text" class="form-control search_form" id="inputCity" />
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="inputState">Catégorie</label>
-                  <select value={category} onChange={(event) => setCategory(event.target.value)}  id="inputState" class="form-control search_form">
-                  <option selected disabled>Cliquez ici pour choisir la catégorie</option>
-                                    <option value="petit-dejeuner">Petit déjeuner</option>
-                                    <option value="dejeuner">Déjeuner</option>
-                                    <option value="diner">Diner</option>
-                                    <option value="dessert">Dessert</option>
+                  <label>Catégorie</label>
+                  <select value={category} onChange={(event) => setCategory(event.target.value)} id="inputState" class="form-control search_form">
+                    <option value="petit-dejeuner">Petit déjeuner</option>
+                    <option value="dejeuner">Déjeuner</option>
+                    <option value="diner">Diner</option>
+                    <option value="dessert">Dessert</option>
                   </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Rechercher</button>

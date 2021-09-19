@@ -12,7 +12,7 @@ import '../../index.css';
 import firebase from "firebase/app";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import ExportRecipes from '../ExportRecipes';
 class Home extends React.Component {
   componentDidMount() {
     AOS.init({
@@ -55,7 +55,11 @@ class Home extends React.Component {
           <br />
           <hr style={{"borderWidth":'4px'}} />
           <br />
-          <h2 class="font-weight-bold"><i class="fa fa-random rose"></i> Recettes a la une</h2>
+          <h2 class="font-weight-bold mb-4"><i class="fa fa-random rose"></i> Recettes a la une</h2>
+          <ExportRecipes limit="3" category={"petit-dejeuner"} />
+          <ExportRecipes limit="3" category={"dejeuner"} />
+          <ExportRecipes limit="3" category={"diner"} />
+          <ExportRecipes limit="3" category={"dessert"} />
         </center>
         <br />
       </Container>

@@ -1,11 +1,13 @@
 import React, {useState, useEffect, useRef} from 'react';
-import app, {db, useFireStore, useFireStorage} from '../auth/Firebase';
+import {useFireStore, useFireStorage} from '../auth/Firebase';
+import firebase from 'firebase/app';
 import {useAuth} from '../auth/AuthContext';
 import {useHistory} from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import {message} from 'antd';
 import "antd/dist/antd.css";
+import nl2br from 'react-nl2br';
 
 const AddRecipe = () => {
     document.title = "Ajouter une Recette - Recetti";
@@ -54,9 +56,9 @@ const AddRecipe = () => {
     var lastname = socket.lastname;
     var fullname = firstname+" "+lastname;
 
-    var day = new Date().getDay();
-    var month = new Date().getMonth();
-    var year = new Date().getYear();
+    var day = new Date().getDate();
+    var month = new Date().getMonth()+1;
+    var year = new Date().getFullYear();
     var today = day+"/"+month+"/"+year; 
 
     const submitRecipe = async (e) => {
@@ -78,7 +80,8 @@ const AddRecipe = () => {
             },
             function() {
                 uploadImage.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-                    db.collection('bucket').doc('recipes').collection(categoryRef.current.value).doc(`${recipeId}`).set({
+                    var category = categoryRef.current.value;
+                    useFireStore.collection('bucket').doc('recipes').collection(categoryRef.current.value).doc(`${recipeId}`).set({
                         image: downloadURL,
                         id: recipeId,
                         name: nameRef.current.value,
@@ -86,12 +89,13 @@ const AddRecipe = () => {
                         description: descriptionRef.current.value,
                         category: categoryRef.current.value,
                         byUser: fullname,
+                        authorId: currentUser.uid,
                         date: today
                     }).then(() => {
                         message.success("Votre recette a été bien ajoutée", 3);
                         emptyInputs();
                         setLoading(false);
-                        history.push(`recettes/${categoryRef.current.value}/${recipeId}`)
+                        history.push(`recettes/${category}/${recipeId}`)
             
                     }).catch(error => alert(error))
                 });

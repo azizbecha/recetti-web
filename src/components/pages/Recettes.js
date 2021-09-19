@@ -7,12 +7,15 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+
 import styled from "styled-components";
 import {useFireStore} from "../auth/Firebase"
 import {Container, Row, Alert} from 'react-bootstrap';
+import ExportRecipes from '../ExportRecipes';
 import Footer from '../Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../index.css'
+
 export default function Recettes() {
   document.title = "Recettes - Recetti";
   let match = useRouteMatch();
@@ -35,43 +38,23 @@ const TousLesRecettes = () => {
   const [error, setError] = useState("");
   const [sockets, setSockets] = useState([]);
 
-  useEffect(() => {
-    const pullBucketData = async () => {
-      return await useFireStore
-        .collection("recipes")
-        .onSnapshot((snapshot) => {
-          const data = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          data.length === 0 ? setError("Your Locker is empty") : setError("");
-          setSockets(data);
-        });
-    };
-    pullBucketData();
-  }, []);
-
   return (
-    <>
-      <Container>
-        {sockets.map((socket, index) => {
-          return (
-              <>
-              <img
-                alt={socket.title}
-                className="preview"
-                src={socket.avatar}
-              />
-              <p>{socket.name}</p>
-              <p>{socket.description}</p>
-              <p>{socket.ingredients}</p>
-              </>
-          );
-        })}
-      </Container>
-      <Row>{error && <Alert message={error} type="info" />}</Row>
-    </>
-  );
+    <Container className="text-center">
+      <h2 className="mt-5 mb-4 font-weight-bold"> <i className="fa fa-tag rose"></i> Tous les recettes</h2>
+
+      <h3 className="font-weight-bold text-left ml-3 mb-3"> <i className="fa fa-tag rose"></i> Petit déjeuner</h3>
+      <ExportRecipes category={"petit-dejeuner"} />
+
+      <h3 className="font-weight-bold text-left ml-3 mb-3"> <i className="fa fa-tag rose"></i> Déjeuner</h3>
+      <ExportRecipes category={"dejeuner"} />
+
+      <h3 className="font-weight-bold text-left ml-3 mb-3"> <i className="fa fa-tag rose"></i> Diner</h3>
+      <ExportRecipes category={"diner"} />
+
+      <h3 className="font-weight-bold text-left ml-3 mb-3"> <i className="fa fa-tag rose"></i> Dessert</h3>
+      <ExportRecipes category={"dessert"} />
+    </Container>
+  )
 }
 
 const DetailsRecette = () => {
@@ -84,7 +67,8 @@ const DetailsRecette = () => {
   const [recipeAuthor, setRecipeAuthor] = useState('');
   const [recipeAddDate, setRecipeAddDate] = useState('');
   const [recipeID, setRecipeID] = useState('');
-  const [recipeImage, setRecipeImage] = useState()
+  const [recipeAuthorID, setRecipeAuthorID] = useState('');
+  const [recipeImage, setRecipeImage] = useState('')
   function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -94,16 +78,18 @@ const DetailsRecette = () => {
     .collection(`${Category}`)
     .doc(`${RecetteID}`)
     .get()
-    .then(snapshot => {
+    .then(async (snapshot) => {
       var data = snapshot.data();
+      setRecipeImage(data.image);
       setRecipeName(data.name);
       setRecipeIngredients(data.ingredients);
       setRecipeDescription(data.description);
       setRecipeCategory(data.category);
       setRecipeID(data.id);
-      setRecipeAuthor(data.author);
+      setRecipeAuthor(data.byUser);
+      setRecipeAuthorID(data.authorId);
       setRecipeAddDate(data.date);
-      setRecipeImage(data.image)
+      
     })
 
   document.title = `${recipeName} - Recetti`
@@ -113,12 +99,16 @@ const DetailsRecette = () => {
         <Heading>{recipeName}</Heading>
         <Image src={recipeImage} alt={"Image de la recette: "+recipeName} />
 
-        <Text><i class="fa fa-tag rose"></i> Catégorie: <CategoryBadge className="badge-primary badge">{capitalize(recipeCategory)}</CategoryBadge></Text>
+        <Text><i class="fa fa-tag rose"></i> Catégorie: <Link to={`../../categories/${recipeCategory}`}><CategoryBadge className="badge-primary badge">{capitalize(recipeCategory)}</CategoryBadge></Link></Text>
+        
         <Text><i class="fa fa-info-circle rose"></i> Description</Text>
         <Description>{recipeDescription}</Description>
 
         <Text><i class="fa fa-pencil rose"></i> Ingredients</Text>
         <Ingredients>{recipeIngredients}</Ingredients>
+
+        <Text><i class="fa fa-user-circle rose"></i> Publiée par</Text>
+        <Link to={`../../u/${recipeAuthorID}`}><Author>{recipeAuthor}</Author></Link>
 
       </Container>
       <Footer />
@@ -152,6 +142,11 @@ const Description = styled.p`
 
 const Ingredients = styled.p`
   font-weight: bold;
+`
+
+const Author = styled.p`
+  font-weight: bold;
+  color: black
 `
 
 const CategoryBadge = styled.span`

@@ -31,40 +31,40 @@ export default function NavBar () {
         <Navbar style={{backgroundColor:"#f64152",color:'#fff'}} collapseOnSelect expand="lg" >
           <Navbar.Brand><img style={{width: '50px',height: '50px',marginTop: '-6px'}} src={logo} /><Link to="/">Recetti</Link></Navbar.Brand>
           <Navbar.Toggle  aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="mr-auto">
-                <Nav.Link><Link to="/">Acceuil</Link></Nav.Link>
-                <Nav.Link><Link to="/chefs">Chefs</Link></Nav.Link>
-                <Nav.Link><Link to="/recettes">Recettes</Link></Nav.Link>
-                <Nav.Link><Link to="/forum">Forum</Link></Nav.Link>
-                <NavDropdown 
-                    id="dropdown-basic nav-dropdown" 
-                    style={{backgroundColor:'#73a47',color: '#fff'}} 
-                    className="white" 
-                    title={
-                      <span style={{color: '#fff'}}>Catégories</span>
-                    }>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to={`categories/petit-dejeuner`}>Petit Déjeuner</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to={`${match.url}/categories/dejeuner`}>Déjeuner</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to={`${match.url}/categories/diner`}>Diner</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to={`${match.url}/categories/dessert`}>Dessert</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to='categories/'>Toutes les Catégories</Link></NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-              <Nav>
-                <NavDropdown
-                  alignRight
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link><Link to="/">Acceuil</Link></Nav.Link>
+              <Nav.Link><Link to="/chefs">Chefs</Link></Nav.Link>
+              <Nav.Link><Link to="/recettes">Recettes</Link></Nav.Link>
+              <Nav.Link><Link to="/forum">Forum</Link></Nav.Link>
+              <NavDropdown 
                   id="dropdown-basic nav-dropdown" 
-                  style={{backgroundColor:'transparent',color: '#fff'}} 
+                  style={{backgroundColor:'#73a47',color: '#fff'}} 
                   className="white" 
                   title={
-                    <span style={{color: '#fff'}}><i className="fa fa-user-circle"></i> Profil</span>
+                    <span style={{color: '#fff'}}>Catégories</span>
                   }>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to={`profile`}>Mon profil</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link style={{color: 'black'}} to={`add-recipe`}>Ajouter Une recette</Link></NavDropdown.Item>
-                  <NavDropdown.Item onClick={logOutUser}><span>Se Déconnecter</span></NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
+                <NavDropdown.Item><Link style={{color: 'black'}} to={`categories/petit-dejeuner`}>Petit Déjeuner</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link style={{color: 'black'}} to={`categories/dejeuner`}>Déjeuner</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link style={{color: 'black'}} to={`categories/diner`}>Diner</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link style={{color: 'black'}} to={`categories/dessert`}>Dessert</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link style={{color: 'black'}} to='categories/'>Toutes les Catégories</Link></NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Nav>
+              <NavDropdown
+                alignRight
+                id="dropdown-basic nav-dropdown" 
+                style={{backgroundColor:'transparent',color: '#fff'}} 
+                className="white" 
+                title={
+                  <span style={{color: '#fff'}}><i className="fa fa-user-circle"></i> Profil</span>
+                }>
+                <NavDropdown.Item><Link style={{color: 'black'}} to={`profile`}>Mon profil</Link></NavDropdown.Item>
+                <NavDropdown.Item><Link style={{color: 'black'}} to={`add-recipe`}>Ajouter Une recette</Link></NavDropdown.Item>
+                <NavDropdown.Item onClick={logOutUser}><span>Se Déconnecter</span></NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
           </Navbar.Collapse>
         </Navbar>
       )

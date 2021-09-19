@@ -20,14 +20,17 @@ import "antd/dist/antd.css";
 // Import CSS
 import './components/styles/Login.css'
 import './components/styles/Register.css'
+
 // Import Bootstrap 4
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
+// Auth Components
 import firebase from 'firebase/app';
 import AuthProvider, {useAuth} from './components/auth/AuthContext'
+
 // Import all our Components to add them to the Route.
-import MainCarousel from './components/MainCarousel';
+import MainHeading from './components/MainHeading';
 import NavBar from './components/Navbar';
 import Home from './components/pages/Home';
 import Footer from './components/Footer';
@@ -40,11 +43,13 @@ import Search from './components/pages/Search';
 import Categories from './components/pages/Categories';
 import AddRecipe from './components/pages/AddRecipe';
 import FAQ from './components/pages/FAQ';
-import NotFound from './components/pages/NotFound'
+import NotFound from './components/pages/NotFound';
 import ForgotPassword from "./components/pages/ForgotPassword"
 import PrivateRoute from "./components/auth/PrivateRoute";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import Contact from './components/pages/Contact'
+import Contact from './components/pages/Contact';
+import User from './components/pages/User';
+
 const App = () =>  {
   var user = firebase.auth().currentUser;
   return (
@@ -81,12 +86,16 @@ const App = () =>  {
               <Search />
             </Route>
 
+            <Route path="/u">
+              <User />
+            </Route>
+
             <Route path="/categories">
               <Categories />
             </Route>
 
             <Route exact path="/">
-              <MainCarousel />
+              <MainHeading />
               <Home />
               <Footer />
             </Route>
