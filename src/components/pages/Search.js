@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useRouteMatch,
-  useParams
-} from "react-router-dom";
-import {useFireStore} from '../auth/Firebase'
-const Search = () =>{
+  useParams,
+} from 'react-router-dom';
+import {useFireStore} from '../auth/Firebase';
+const Search = () => {
   let match = useRouteMatch();
   return (
     <Router>
@@ -19,27 +19,26 @@ const Search = () =>{
       </Switch>
     </Router>
   );
-}
-
+};
 
 function SearchResult() {
   function capitalize(word) {
     const lower = word.toLowerCase();
-    return word.charAt(0).toUpperCase() + lower.slice(1).replace("-", " ");
-  };
-  let { Category, Keyword } = useParams();
+    return word.charAt(0).toUpperCase() + lower.slice(1).replace('-', ' ');
+  }
+  let {Category, Keyword} = useParams();
   const [sockets, setSockets] = useState([]);
-  Keyword.replace("%20", " ");
+  Keyword.replace('%20', ' ');
   capitalize(Keyword);
   useEffect(() => {
     const pullData = async () => {
       return await useFireStore
-        .collection("bucket")
-        .doc("recipes")
+        .collection('bucket')
+        .doc('recipes')
         .collection(`${Category}`)
-        .where("name", "==", Keyword)
-        .onSnapshot((snapshot) => {
-          const data = snapshot.docs.map((doc) => ({
+        .where('name', '==', Keyword)
+        .onSnapshot(snapshot => {
+          const data = snapshot.docs.map(doc => ({
             id: doc.id,
             ...doc.data(),
           }));
@@ -54,16 +53,25 @@ function SearchResult() {
     <>
       {sockets.map((socket, index) => {
         return (
-            <div className="col-sm-4">
-                <div class="card shadow">
-                    <img class="card-img-top" src={socket.image} alt={"Image de "+socket.name} />
-                    <div class="card-body">
-                        <h5 class="card-title">{socket.name}</h5>
-                        <p class="card-text">{socket.description}</p>
-                        <Link to={`../../recettes/${socket.category}/${socket.id}`} class="btn btn-primary">Go somewhere</Link>
-                    </div>
-                </div>
+          <div className="col-sm-4">
+            <div class="card shadow">
+              <img
+                class="card-img-top"
+                src={socket.image}
+                alt={'Image de ' + socket.name}
+              />
+              <div class="card-body">
+                <h5 class="card-title">{socket.name}</h5>
+                <p class="card-text">{socket.description}</p>
+                <Link
+                  to={`../../recettes/${socket.category}/${socket.id}`}
+                  class="btn btn-primary"
+                >
+                  Go somewhere
+                </Link>
+              </div>
             </div>
+          </div>
         );
       })}
     </>

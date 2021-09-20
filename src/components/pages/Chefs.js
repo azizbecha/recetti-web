@@ -1,17 +1,16 @@
 import React from 'react';
 
-const Chefs = () =>{
-
+const Chefs = () => {
   document.title = 'Chefs - Recetti';
 
-  return  (
+  return (
     <div>
       <center>
         <br />
-          <h1>Chefs</h1>
+        <h1>Chefs</h1>
       </center>
     </div>
   );
-}
+};
 
-export default Chefs
+export default Chefs;

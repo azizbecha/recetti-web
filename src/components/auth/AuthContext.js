@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { auth } from "./Firebase";
+import React, {useContext, useEffect, useState} from 'react';
+import {auth} from './Firebase';
 
 const AuthContext = React.createContext();
 
@@ -7,7 +7,7 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export default function AuthProvider({ children }) {
+export default function AuthProvider({children}) {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
 
@@ -23,20 +23,20 @@ export default function AuthProvider({ children }) {
     return auth.signOut();
   };
 
-  const resetPassword = (email) => {
+  const resetPassword = email => {
     return auth.sendPasswordResetEmail(email);
   };
 
-  const updateEmail = (email) => {
+  const updateEmail = email => {
     return auth.updateEmail(email);
   };
 
-  const updatePassword = (password) => {
+  const updatePassword = password => {
     return currentUser.updatePassword(password);
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user);
       setLoading(false);
     });
