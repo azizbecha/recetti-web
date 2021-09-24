@@ -1,33 +1,33 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useFireStore, useFireStorage} from '../auth/Firebase';
-import firebase from 'firebase/app';
 import {useAuth} from '../auth/AuthContext';
 import {useHistory} from 'react-router-dom';
-import {Container, Row} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import {message} from 'antd';
 import 'antd/dist/antd.css';
-import nl2br from 'react-nl2br';
+import ReactQuill from "react-quill"
+import 'react-quill/dist/quill.snow.css'
+//import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 const AddRecipe = () => {
+
   document.title = 'Ajouter une Recette - Recetti';
   const [image, setImage] = useState('');
   const nameRef = useRef();
-  const ingRef = useRef();
-  const descriptionRef = useRef();
   const categoryRef = useRef();
-  const [imgUrl, setImgUrl] = useState('');
   const [loading, setLoading] = useState(false);
+  const [description, setDescription] = useState("");
+  const [ingredients, setIngredients] = useState("");
 
-  const {currentUser, logout} = useAuth();
+  const {currentUser} = useAuth();
   const [socket, setSocket] = useState({});
 
   const history = useHistory();
 
   const makeId = length => {
     var result = '';
-    var characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
     for (var i = 0; i < length; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -37,8 +37,8 @@ const AddRecipe = () => {
   const emptyInputs = () => {
     setImage('');
     nameRef.current.value = '';
-    ingRef.current.value = '';
-    descriptionRef.current.value = '';
+    setIngredients("");
+    setDescription("");
     categoryRef.current.value = '';
   };
   const GetProfileData = async () => {
@@ -79,7 +79,7 @@ const AddRecipe = () => {
           //console.log("Image Upload Progress")
         },
         error => {
-          //console.log(error);
+          console.log(error);
         },
         function () {
           uploadImage.snapshot.ref
@@ -95,8 +95,8 @@ const AddRecipe = () => {
                   image: downloadURL,
                   id: recipeId,
                   name: nameRef.current.value,
-                  ingredients: ingRef.current.value,
-                  description: descriptionRef.current.value,
+                  ingredients: ingredients,
+                  description: description,
                   category: categoryRef.current.value,
                   byUser: fullname,
                   authorId: currentUser.uid,
@@ -118,13 +118,13 @@ const AddRecipe = () => {
     }
   };
   return (
-    <div>
+    <>
       <Container>
-        <h2 class="mt-5 mb-4 font-weight-bold text-center">
-          <i class="fa fa-plus rose"></i> Ajouter une recette
+        <h2 className="mt-5 mb-4 font-weight-bold text-center">
+          <i className="fa fa-plus rose"></i> Ajouter une recette
         </h2>
         <form method="post" onSubmit={submitRecipe}>
-          <div class="form-group mb-3 mt-3">
+          <div className="form-group mb-3 mt-3">
             <label>
               Nom de la recette <span className="rose">*</span>
             </label>
@@ -132,43 +132,37 @@ const AddRecipe = () => {
               ref={nameRef}
               required
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Entrer le nom de la recette"
             />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>
               Ingrédients <span className="rose">*</span>
             </label>
-            <textarea
-              ref={ingRef}
-              required
-              rows="5"
-              type="text"
-              class="form-control"
-              placeholder="Entrer les ingrédients de la recette"
-            ></textarea>
+            <ReactQuill
+              theme='snow'
+              value={ingredients}
+              onChange={setIngredients}
+            />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>
               Description <span className="rose">*</span>
             </label>
-            <textarea
-              ref={descriptionRef}
-              required
-              rows="5"
-              type="text"
-              class="form-control"
-              placeholder="Entrer la description de la recette"
-            ></textarea>
+            <ReactQuill
+              theme='snow'
+              value={description}
+              onChange={setDescription}
+            />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <div className="row">
               <div className="col">
                 <label>
                   Catégorie <span className="rose">*</span>
                 </label>
-                <select ref={categoryRef} class="custom-select" required="true">
+                <select ref={categoryRef} className="custom-select" required="true">
                   <option selected disabled>
                     Cliquez ici pour choisir la catégorie
                   </option>
@@ -182,20 +176,20 @@ const AddRecipe = () => {
                 <label>
                   Image <span className="rose">*</span>
                 </label>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">Télécharger</span>
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text">Télécharger</span>
                   </div>
-                  <div class="custom-file">
+                  <div className="custom-file">
                     <input
                       type="file"
                       onChange={e => {
                         setImage(e.target.files[0]);
                       }}
-                      class="custom-file-input"
+                      className="custom-file-input"
                       id="inputGroupFile01"
                     />
-                    <label class="custom-file-label" for="inputGroupFile01">
+                    <label className="custom-file-label">
                       Choisir une image
                     </label>
                   </div>
@@ -206,13 +200,13 @@ const AddRecipe = () => {
           <button
             type="submit"
             disabled={loading}
-            class="btn btn-primary btn-block"
+            className="btn btn-primary btn-block"
           >
-            <i class="fa fa-arrow-right"></i> Ajouter
+            <i className="fa fa-arrow-right"></i> Ajouter
           </button>
         </form>
       </Container>
-    </div>
+    </>
   );
 };
 

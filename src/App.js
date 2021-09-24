@@ -7,9 +7,8 @@
  */
 
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import {message} from 'antd';
 import 'antd/dist/antd.css';
 
 // Import CSS
@@ -21,8 +20,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 // Auth Components
-import firebase from 'firebase/app';
-import AuthProvider, {useAuth} from './components/auth/AuthContext';
+import AuthProvider from './components/auth/AuthContext';
 
 // Import all our Components to add them to the Route.
 import MainHeading from './components/MainHeading';
@@ -46,7 +44,7 @@ import Contact from './components/pages/Contact';
 import User from './components/pages/User';
 
 const App = () => {
-  var user = firebase.auth().currentUser;
+  //var user = firebase.auth().currentUser;
   return (
     <AuthProvider>
       <Router>

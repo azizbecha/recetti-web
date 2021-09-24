@@ -115,7 +115,7 @@ const DetailsRecette = () => {
         <Image src={recipeImage} alt={'Image de la recette: ' + recipeName} />
 
         <Text>
-          <i class="fa fa-tag rose"></i> Catégorie:{' '}
+          <i className="fa fa-tag rose"></i> Catégorie:{' '}
           <Link to={`../../categories/${recipeCategory}`}>
             <CategoryBadge className="badge-primary badge">
               {capitalize(recipeCategory)}
@@ -124,17 +124,17 @@ const DetailsRecette = () => {
         </Text>
 
         <Text>
-          <i class="fa fa-info-circle rose"></i> Description
+          <i className="fa fa-info-circle rose"></i> Description
         </Text>
         <Description>{recipeDescription}</Description>
 
         <Text>
-          <i class="fa fa-pencil rose"></i> Ingredients
+          <i className="fa fa-pencil rose"></i> Ingredients
         </Text>
         <Ingredients>{recipeIngredients}</Ingredients>
 
         <Text>
-          <i class="fa fa-user-circle rose"></i> Publiée par
+          <i className="fa fa-user-circle rose"></i> Publiée par
         </Text>
         <Link to={`../../u/${recipeAuthorID}`}>
           <Author>{recipeAuthor}</Author>

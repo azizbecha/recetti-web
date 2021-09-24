@@ -13,6 +13,7 @@ export default function Footer() {
           <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
             <h5 className="font-weight-bold text-white">
               <img
+                alt="Recetti logo"
                 style={{width: '45px', marginLeft: '-10px', marginTop: '-5px'}}
                 src={logo}
               />{' '}

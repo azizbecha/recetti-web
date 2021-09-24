@@ -1,16 +1,21 @@
 import React, {useRef, useState} from 'react';
-import {useHistory, Link} from 'react-router-dom';
+
+import {useHistory} from 'react-router-dom';
+
 import {Container} from 'react-bootstrap';
+
 import {useFireStore} from '../auth/Firebase';
+
 import {message} from 'antd';
+
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+
 const Contact = () => {
   document.title = 'Contact - Recetti';
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
-  const phoneRef = useRef();
   const subjectRef = useRef();
   const messageRef = useRef();
   const [number, setNumber] = useState();
@@ -69,12 +74,12 @@ const Contact = () => {
   return (
     <div>
       <Container>
-        <h2 class="mt-5 mb-4 font-weight-bold text-center">
-          <i class="fa fa-paper-plane rose"></i> Contacter nous
+        <h2 className="mt-5 mb-4 font-weight-bold text-center">
+          <i className="fa fa-paper-plane rose"></i> Contacter nous
         </h2>
         <form method="post" onSubmit={submitMessage}>
-          <div class="row">
-            <div class="form-group mb-3 mt-3 col-6">
+          <div className="row">
+            <div className="form-group mb-3 mt-3 col-6">
               <label>
                 Nom <span className="rose">*</span>
               </label>
@@ -82,11 +87,11 @@ const Contact = () => {
                 ref={firstNameRef}
                 required
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Entrer le nom de la recette"
               />
             </div>
-            <div class="form-group mb-3 mt-3 col-6">
+            <div className="form-group mb-3 mt-3 col-6">
               <label>
                 Prénom <span className="rose">*</span>
               </label>
@@ -94,13 +99,13 @@ const Contact = () => {
                 ref={lastNameRef}
                 required
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Entrer le nom de la recette"
               />
             </div>
           </div>
-          <div class="row">
-            <div class="form-group mb-3 mt-3 col-6">
+          <div className="row">
+            <div className="form-group mb-3 mt-3 col-6">
               <label>
                 Email <span className="rose">*</span>
               </label>
@@ -108,28 +113,28 @@ const Contact = () => {
                 ref={emailRef}
                 required
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Entrer le nom de la recette"
               />
             </div>
-            <div class="form-group mb-3 mt-3 col-6">
+            <div className="form-group mb-3 mt-3 col-6">
               <label>
                 Téléphone <span className="rose">*</span>
               </label>
               <PhoneInput
                 defaultCountry="TN"
-                class="form-control"
+                className="form-control"
                 placeholder="Enter le numèro de téléphone"
                 value={number}
                 onChange={setNumber}
               />
             </div>
           </div>
-          <div class="form-group mb-3 mt-3">
+          <div className="form-group mb-3 mt-3">
             <label>
               Sujet <span className="rose">*</span>
             </label>
-            <select class="form-control" ref={subjectRef} required>
+            <select className="form-control" ref={subjectRef} required>
               <option value="" selected disabled hidden>
                 Select a subject
               </option>
@@ -155,7 +160,7 @@ const Contact = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label>
               Message <span className="rose">*</span>
             </label>
@@ -164,13 +169,13 @@ const Contact = () => {
               required
               rows="5"
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Entrer les ingrédients de la recette"
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">
-            <i class="fa fa-arrow-right"></i> Envoyer
+          <button type="submit" className="btn btn-primary btn-block">
+            <i className="fa fa-arrow-right"></i> Envoyer
           </button>
         </form>
       </Container>

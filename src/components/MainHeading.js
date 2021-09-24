@@ -10,16 +10,16 @@ export default function MainHeading() {
     history.push(`search/${category}/${keyword}`);
   };
   return (
-    <div class="jumbotron text-center">
+    <div className="jumbotron text-center">
       <center>
-        <div class="container">
-          <h1 class="display-4 font-weight-bold">Bienvenue a Recetti</h1>
-          <p class="lead font-weight-normal">
+        <div className="container">
+          <h1 className="display-4 font-weight-bold">Bienvenue a Recetti</h1>
+          <p className="lead font-weight-normal">
             Votre meilleur espace de découvrir et partager des recettes
           </p>
           <hr />
-          <p class="lead">
-            <h1 class="font-weight-bold" data-aos="fade-up">
+          <p className="lead">
+            <h1 className="font-weight-bold" data-aos="fade-up">
               <i
                 className="fa fa-search"
                 style={{color: '#f64152'}}
@@ -34,24 +34,24 @@ export default function MainHeading() {
               onSubmit={GoSearch}
               style={{width: '80%'}}
             >
-              <div class="form-row">
-                <div class="form-group col-md-8">
+              <div className="form-row">
+                <div className="form-group col-md-8">
                   <label for="inputCity">Recette</label>
                   <input
                     value={keyword}
                     onChange={event => setKeyword(event.target.value)}
                     type="text"
-                    class="form-control search_form"
+                    className="form-control search_form"
                     id="inputCity"
                   />
                 </div>
-                <div class="form-group col-md-4">
+                <div className="form-group col-md-4">
                   <label>Catégorie</label>
                   <select
                     value={category}
                     onChange={event => setCategory(event.target.value)}
                     id="inputState"
-                    class="form-control search_form"
+                    className="form-control search_form"
                   >
                     <option value="petit-dejeuner">Petit déjeuner</option>
                     <option value="dejeuner">Déjeuner</option>
@@ -59,7 +59,7 @@ export default function MainHeading() {
                     <option value="dessert">Dessert</option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">
+                <button type="submit" className="btn btn-primary btn-block">
                   Rechercher
                 </button>
               </div>

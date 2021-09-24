@@ -5,15 +5,13 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/storage';
 import 'firebase/auth';
-import AuthContext, {useAuth} from './auth/AuthContext';
-import app from './auth/Firebase';
+import {useAuth} from './auth/AuthContext';
 import logo from './assets/images/recetti-logo.png';
 import {message} from 'antd';
 import 'antd/dist/antd.css';
-var user = firebase.auth().currentUser;
+//var user = firebase.auth().currentUser;
 
 export default function NavBar() {
-  let match = useRouteMatch();
   const history = useHistory();
   const {currentUser} = useAuth();
   const logOutUser = () => {
@@ -36,6 +34,7 @@ export default function NavBar() {
           <img
             style={{width: '50px', height: '50px', marginTop: '-6px'}}
             src={logo}
+            alt="Recetti logo"
           />
           <Link to="/">Recetti</Link>
         </Navbar.Brand>
@@ -126,6 +125,7 @@ export default function NavBar() {
       >
         <Navbar.Brand>
           <img
+            alt="Recetti logo"
             style={{width: '50px', height: '50px', marginTop: '-6px'}}
             src={logo}
           />

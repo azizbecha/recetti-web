@@ -54,18 +54,18 @@ function SearchResult() {
       {sockets.map((socket, index) => {
         return (
           <div className="col-sm-4">
-            <div class="card shadow">
+            <div className="card shadow">
               <img
-                class="card-img-top"
+                className="card-img-top"
                 src={socket.image}
                 alt={'Image de ' + socket.name}
               />
-              <div class="card-body">
-                <h5 class="card-title">{socket.name}</h5>
-                <p class="card-text">{socket.description}</p>
+              <div className="card-body">
+                <h5 className="card-title">{socket.name}</h5>
+                <p className="card-text">{socket.description}</p>
                 <Link
                   to={`../../recettes/${socket.category}/${socket.id}`}
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                 >
                   Go somewhere
                 </Link>

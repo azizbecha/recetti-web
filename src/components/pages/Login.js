@@ -2,12 +2,12 @@ import React, {useRef, useState} from 'react';
 import {useAuth} from '../auth/AuthContext';
 import {Link, useHistory} from 'react-router-dom';
 import Footer from '../Footer';
-// ant design component call
+
 import {message} from 'antd';
 import '../styles/Login.css';
 import '../../App.css';
 import logo from '../assets/images/recetti-logo.png';
-//import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from "react-icons/ai";
+
 const Login = () => {
   document.title = 'Se Connecter - Recetti';
 
@@ -22,7 +22,7 @@ const Login = () => {
     // prevent all default exeptions
     e.preventDefault();
 
-    if (emailRef.current.value || passwordRef.current.value == '') {
+    if (emailRef.current.value || passwordRef.current.value === '') {
       try {
         setLoading(true);
         message.info('Veuillez attendre ...', 1.5);
@@ -41,30 +41,30 @@ const Login = () => {
   return (
     <>
       <div>
-        <div class="login-form">
+        <div className="login-form">
           <br />
           <form onSubmit={handleSumbit} method="post">
             <div className="mb-3">
               <center>
-                <img style={{width: '100px'}} src={logo} />
+                <img style={{width: '100px'}} src={logo} alt="Recetti logo" />
               </center>
             </div>
-            <h4 class="modal-title">Se connecter a Recetti</h4>
-            <div class="form-group">
+            <h4 className="modal-title">Se connecter a Recetti</h4>
+            <div className="form-group">
               <input
                 ref={emailRef}
                 type="email"
-                class="form-control"
+                className="form-control"
                 placeholder="Nom d'utilisateur ou E-mail"
                 name="username"
                 required="required"
               />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <input
                 ref={passwordRef}
                 type="password"
-                class="form-control"
+                className="form-control"
                 placeholder="Mot De Passe"
                 name="password"
                 required="required"
@@ -74,16 +74,16 @@ const Login = () => {
               type="submit"
               disabled={loading}
               name="login"
-              class="btn btn-primary btn-block btn-lg"
+              className="btn btn-primary btn-block btn-lg"
             >
-              <i class="fa fa-arrow-right"></i> Se Connecter
+              <i className="fa fa-arrow-right"></i> Se Connecter
             </button>
           </form>
-          <div class="text-center small mt-2">
+          <div className="text-center small mt-2">
             Vous n'avez pas un compte ?
             <Link to="register"> Créez un compte</Link>
           </div>
-          <div class="text-center small mt-2">
+          <div className="text-center small mt-2">
             Mot de passe oublié ?
             <Link to="forgot-password"> Récupérer votre compte</Link>
           </div>

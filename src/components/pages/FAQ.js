@@ -6,11 +6,11 @@ function FAQ() {
   return (
     <div className="container">
       <div id="accordion">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
+        <div className="card">
+          <div className="card-header" id="headingOne">
+            <h5 className="mb-0">
               <button
-                class="btn btn-link"
+                className="btn btn-link"
                 data-toggle="collapse"
                 data-target="#collapseOne"
                 aria-expanded="true"
@@ -23,11 +23,11 @@ function FAQ() {
 
           <div
             id="collapseOne"
-            class="collapse show"
+            className="collapse show"
             aria-labelledby="headingOne"
             data-parent="#accordion"
           >
-            <div class="card-body">
+            <div className="card-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life
               accusamus terry richardson ad squid. 3 wolf moon officia aute, non
               cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
@@ -41,11 +41,11 @@ function FAQ() {
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
+        <div className="card">
+          <div className="card-header" id="headingTwo">
+            <h5 className="mb-0">
               <button
-                class="btn btn-link collapsed"
+                className="btn btn-link collapsed"
                 data-toggle="collapse"
                 data-target="#collapseTwo"
                 aria-expanded="false"
@@ -57,11 +57,11 @@ function FAQ() {
           </div>
           <div
             id="collapseTwo"
-            class="collapse"
+            className="collapse"
             aria-labelledby="headingTwo"
             data-parent="#accordion"
           >
-            <div class="card-body">
+            <div className="card-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life
               accusamus terry richardson ad squid. 3 wolf moon officia aute, non
               cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
@@ -75,11 +75,11 @@ function FAQ() {
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
+        <div className="card">
+          <div className="card-header" id="headingThree">
+            <h5 className="mb-0">
               <button
-                class="btn btn-link collapsed"
+                className="btn btn-link collapsed"
                 data-toggle="collapse"
                 data-target="#collapseThree"
                 aria-expanded="false"
@@ -91,11 +91,11 @@ function FAQ() {
           </div>
           <div
             id="collapseThree"
-            class="collapse"
+            className="collapse"
             aria-labelledby="headingThree"
             data-parent="#accordion"
           >
-            <div class="card-body">
+            <div className="card-body">
               Anim pariatur cliche reprehenderit, enim eiusmod high life
               accusamus terry richardson ad squid. 3 wolf moon officia aute, non
               cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
