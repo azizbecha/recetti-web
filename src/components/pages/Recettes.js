@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,11 +10,12 @@ import {
 
 import styled from 'styled-components';
 import {useFireStore} from '../auth/Firebase';
-import {Container, Row, Alert} from 'react-bootstrap';
+import {Container, Row, Alert, Button} from 'react-bootstrap';
 import ExportRecipes from '../ExportRecipes';
 import Footer from '../Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../index.css';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function Recettes() {
   document.title = 'Recettes - Recetti';
@@ -87,7 +88,7 @@ const DetailsRecette = () => {
   function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
+  document.title = `Recetti`;
   useFireStore
     .collection('bucket/')
     .doc('recipes')
@@ -96,53 +97,72 @@ const DetailsRecette = () => {
     .get()
     .then(async snapshot => {
       var data = snapshot.data();
-      setRecipeImage(data.image);
-      setRecipeName(data.name);
-      setRecipeIngredients(data.ingredients);
-      setRecipeDescription(data.description);
-      setRecipeCategory(data.category);
-      setRecipeID(data.id);
-      setRecipeAuthor(data.byUser);
-      setRecipeAuthorID(data.authorId);
-      setRecipeAddDate(data.date);
+      if (data) {
+        setRecipeName(data.name);
+        setRecipeImage(data.image);
+        setRecipeIngredients(data.ingredients);
+        setRecipeDescription(data.description);
+        setRecipeCategory(data.category);
+        setRecipeID(data.id);
+        setRecipeAuthor(data.byUser);
+        setRecipeAuthorID(data.authorId);
+        setRecipeAddDate(data.date);
+        document.title = `${recipeName} - Recetti`;
+      }
+      
     });
 
-  document.title = `${recipeName} - Recetti`;
-  return (
-    <>
-      <Container>
-        <Heading>{recipeName}</Heading>
-        <Image src={recipeImage} alt={'Image de la recette: ' + recipeName} />
-
-        <Text>
-          <i className="fa fa-tag rose"></i> Catégorie:{' '}
-          <Link to={`../../categories/${recipeCategory}`}>
-            <CategoryBadge className="badge-primary badge">
-              {capitalize(recipeCategory)}
-            </CategoryBadge>
+  if (recipeName!=="") {
+    return (
+      <>
+        <Container>
+          <Heading>{recipeName}</Heading>
+          <Image src={recipeImage} alt={'Image de la recette: ' + recipeName} />
+  
+          <Text>
+            <i className="fa fa-tag rose"></i> Catégorie:{' '}
+            <Link to={`../../categories/${recipeCategory}`}>
+              <CategoryBadge className="badge-primary badge">
+                {capitalize(recipeCategory)}
+              </CategoryBadge>
+            </Link>
+          </Text>
+  
+          <Text>
+            <i className="fa fa-info-circle rose"></i> Description
+          </Text>
+          <Description className="ml-4">{ReactHtmlParser(recipeDescription)}</Description>
+  
+          <Text>
+            <i className="fa fa-pencil rose"></i> Ingredients
+          </Text>
+          <Ingredients className="ml-4">{ReactHtmlParser(recipeIngredients)}</Ingredients>
+  
+          <Text>
+            <i className="fa fa-user-circle rose"></i> Publiée par
+          </Text>
+          <Link to={`../../u/${recipeAuthorID}`}>
+            <Author  className="ml-4">{recipeAuthor}</Author>
           </Link>
-        </Text>
-
-        <Text>
-          <i className="fa fa-info-circle rose"></i> Description
-        </Text>
-        <Description>{recipeDescription}</Description>
-
-        <Text>
-          <i className="fa fa-pencil rose"></i> Ingredients
-        </Text>
-        <Ingredients>{recipeIngredients}</Ingredients>
-
-        <Text>
-          <i className="fa fa-user-circle rose"></i> Publiée par
-        </Text>
-        <Link to={`../../u/${recipeAuthorID}`}>
-          <Author>{recipeAuthor}</Author>
-        </Link>
-      </Container>
-      <Footer />
-    </>
-  );
+        </Container>
+        <Footer />
+      </>
+    );
+  } else {
+      document.title = `Recette non trouvée - Recetti`;
+      return (
+        <Container className="mt-3">
+          <div className="text-center font-weight-bold mt-5">
+            <h1>Recette non trouvée</h1>
+            <br />
+            <h3>La recette que vous cherchez n'est pas trouvée dans Recetti !</h3>
+            <h3>Si vous pensez que c&apos;est un erreur causé par notre platforme, Veuillez nous contacter pour fixer cet erreur</h3>
+            <br />
+            <Link to="../../"><span className="btn btn-primary btn-lg"><i className="fa fa-arrow-right"></i> Retour a la page d&apos;acceuil</span></Link>
+          </div>
+        </Container>
+      )
+  }
 };
 
 // Custom styles
@@ -167,6 +187,7 @@ const Image = styled.img`
 
 const Description = styled.p`
   font-weight: bold;
+  /*margin-left: 20px*/
 `;
 
 const Ingredients = styled.p`

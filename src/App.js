@@ -54,11 +54,11 @@ const App = () => {
           <ProtectedRoute path="/login" component={Login} />
           <ProtectedRoute path="/forgot-password" component={ForgotPassword} />
           <PrivateRoute path="/add-recipe" component={AddRecipe} />
+          <PrivateRoute path="/contact" component={Contact} />
+
           <Route path="/faq">
             <FAQ />
           </Route>
-
-          <PrivateRoute path="/contact" component={Contact} />
 
           <Route path="/forum">
             <Forum />
@@ -89,6 +89,8 @@ const App = () => {
             <Home />
             <Footer />
           </Route>
+
+          {/* The 404 page route */}
           <Route component={NotFound} />
         </Switch>
       </Router>

@@ -29,6 +29,11 @@ const Register = () => {
       return message.error('Les mots de passe ne correspondant pas', 3);
     }
 
+    var day = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    var today = day + '/' + month + '/' + year;
+
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -45,6 +50,7 @@ const Register = () => {
             email: email,
             username: username,
             uid: uid,
+            joinDate: today
           })
           .catch(error => alert(error));
         message.success('Bienvenue chez Recetti');

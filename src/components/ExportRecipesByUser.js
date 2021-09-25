@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {useFireStore} from './auth/Firebase';
-import {Container, Row, Button, Card, Col} from 'react-bootstrap';
+import {Row, Button, Card, Col} from 'react-bootstrap';
 import ReactHtmlParser from 'react-html-parser';
 
-const ExportRecipes = ({category, limit}) => {
+const ExportRecipesByUser = ({category, limit, byUser}) => {
 
   const [sockets, setSockets] = useState([]);
 
@@ -15,6 +15,7 @@ const ExportRecipes = ({category, limit}) => {
         .doc('recipes')
         .collection(`${category}`)
         .limit(limit)
+        .where("byUser", "==", byUser )
         .onSnapshot(snapshot => {
           const data = snapshot.docs.map(doc => ({
             id: doc.id,
@@ -28,11 +29,11 @@ const ExportRecipes = ({category, limit}) => {
   }, []);
 
   return (
-    <Container className="text-center">
+    <>
       <Row>
         {sockets.map((socket, index) => {
           return (
-            <Col sm={4} className="mb-4">
+            <Col sm={4} className="mb-4 text-center">
               <Card>
                 <Card.Img
                   variant="top"
@@ -66,8 +67,8 @@ const ExportRecipes = ({category, limit}) => {
           );
         })}
       </Row>
-    </Container>
+    </>
   );
 };
 
-export default ExportRecipes;
+export default ExportRecipesByUser;
