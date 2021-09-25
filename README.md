@@ -27,7 +27,6 @@
 | Customize SEO tags                                           |
 | Convert CSS code to native components with styled-components |
 | Improve the UI of See Recipe components                      |
-| Add MyProfile Component                                      |
 | Design the 404 not found page component                      |
 
 
