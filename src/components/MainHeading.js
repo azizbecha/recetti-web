@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 export default function MainHeading() {
   const history = useHistory();
@@ -65,34 +65,38 @@ export default function MainHeading() {
               </div>
             </form>
             <div className="btn-group font-weight-bold">
-              <a
-                data-aos="zoom-in"
-                href="categories/Petit-Déjeuner"
-                className="btn btn-primary mr-1 font-weight-bold"
-              >
-                <i className="fa fa-tag"></i>&nbsp; Petit Déjeuner
-              </a>
-              <a
-                data-aos="zoom-in"
-                href="categories/Déjeuner"
-                className="btn btn-primary mr-1 font-weight-bold"
-              >
-                <i className="fa fa-tag"></i>&nbsp; Déjeuner
-              </a>
-              <a
-                data-aos="zoom-in"
-                href="categories/Diner"
-                className="btn btn-primary mr-1 font-weight-bold"
-              >
-                <i className="fa fa-tag"></i>&nbsp; Diner
-              </a>
-              <a
-                data-aos="zoom-in"
-                href="categories/Dessert"
-                className="btn btn-primary mr-1 font-weight-bold"
-              >
-                <i className="fa fa-tag"></i>&nbsp; Dessert
-              </a>
+              <Link to="categories/petit-dejeuner">
+                <span
+                  data-aos="zoom-in"
+                  className="btn btn-primary mr-1 font-weight-bold"
+                >
+                  <i className="fa fa-tag"></i>&nbsp; Petit Déjeuner
+                </span>
+              </Link>
+              <Link to="categories/dejeuner">
+                <span
+                  data-aos="zoom-in"
+                  className="btn btn-primary mr-1 font-weight-bold"
+                >
+                  <i className="fa fa-tag"></i>&nbsp; Déjeuner
+                </span>
+              </Link>
+              <Link to="categories/diner">
+                <span
+                  data-aos="zoom-in"
+                  className="btn btn-primary mr-1 font-weight-bold"
+                >
+                  <i className="fa fa-tag"></i>&nbsp; Diner
+                </span>
+              </Link>
+              <Link to="categories/dessert">
+                <span
+                  data-aos="zoom-in"
+                  className="btn btn-primary mr-1 font-weight-bold"
+                >
+                  <i className="fa fa-tag"></i>&nbsp; Dessert
+                </span>
+              </Link>
             </div>
           </p>
         </div>

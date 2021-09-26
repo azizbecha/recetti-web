@@ -31,7 +31,7 @@ const ExportRecipes = ({category, limit}) => {
   }, []);
 
   return (
-    <Container className="text-center">
+    <Container>
       <Row>
         {sockets.map((socket, index) => {
           return (
@@ -43,8 +43,8 @@ const ExportRecipes = ({category, limit}) => {
                   src={socket.image}
                 />
                 <Card.Body>
-                  <Card.Title>{socket.name}</Card.Title>
-                  <Card.Text className="font-weight-bold">
+                  <Card.Title className="text-center">{socket.name}</Card.Title>
+                  <Card.Text className="font-weight-bold text-left">
                   {ReactHtmlParser(socket.description)}
                   <i className="fa fa-tag rose mb-3"></i> Catégorie: <Link to={`../categories/${socket.category}/`}><CategoryBadge className="badge-primary badge">{capitalize(socket.category)}</CategoryBadge></Link>
                   <br/> <i className="fa fa-user-circle rose"></i> Publiée par: <Link to={`../chefs/${socket.authorId}`}><span style={{color: '#000'}}>{socket.byUser}</span></Link>  

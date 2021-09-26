@@ -55,8 +55,8 @@ function SearchResult() {
   }, []);
 
   return (
-    <Container className="text-center">
-      <h2 className="mt-5 mb-5 font-weight-bold"><i className="fa fa-search rose"></i> Résultats de la recherche: {Keyword}</h2>
+    <Container>
+      <h2 className="mt-5 mb-5 font-weight-bold text-center"><i className="fa fa-search rose"></i> Résultats de la recherche: {Keyword}</h2>
       <Row>
         {sockets.map((socket, index) => {
           return (
@@ -68,7 +68,7 @@ function SearchResult() {
                   src={socket.image}
                 />
                 <Card.Body>
-                  <Card.Title>{socket.name}</Card.Title>
+                  <Card.Title className="text-center">{socket.name}</Card.Title>
                   <Card.Text className="font-weight-bold">
                   {ReactHtmlParser(socket.description)}
                   <i className="fa fa-tag rose mb-3"></i> Catégorie: <Link to={`../categories/${socket.category}/`}><CategoryBadge className="badge-primary badge">{capitalize(socket.category)}</CategoryBadge></Link>

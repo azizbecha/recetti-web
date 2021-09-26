@@ -19,7 +19,6 @@
 
 ## TO-DO
 
-- Complete Search component
 - Add FAQ
 - Add links to the Footer/Navbar
 - Customize SEO tags

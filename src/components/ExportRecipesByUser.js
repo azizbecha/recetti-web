@@ -44,7 +44,7 @@ const ExportRecipesByUser = ({category, limit, byUser}) => {
                   src={socket.image}
                 />
                 <Card.Body>
-                  <Card.Title>{socket.name}</Card.Title>
+                  <Card.Title className="text-center">{socket.name}</Card.Title>
                   <Card.Text className="font-weight-bold">
                   {ReactHtmlParser(socket.description)}
                   <i className="fa fa-tag rose mb-3"></i> Catégorie: <Link to={`../categories/${socket.category}/`}><CategoryBadge className="badge-primary badge">{capitalize(socket.category)}</CategoryBadge></Link>
