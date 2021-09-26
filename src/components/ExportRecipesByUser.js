@@ -3,9 +3,12 @@ import {Link} from 'react-router-dom';
 import {useFireStore} from './auth/Firebase';
 import {Row, Button, Card, Col} from 'react-bootstrap';
 import ReactHtmlParser from 'react-html-parser';
+import styled from 'styled-components';
 
 const ExportRecipesByUser = ({category, limit, byUser}) => {
-
+  function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   const [sockets, setSockets] = useState([]);
 
   useEffect(() => {
@@ -33,7 +36,7 @@ const ExportRecipesByUser = ({category, limit, byUser}) => {
       <Row>
         {sockets.map((socket, index) => {
           return (
-            <Col sm={4} className="mb-4 text-center">
+            <Col sm={4} className="mb-4">
               <Card>
                 <Card.Img
                   variant="top"
@@ -42,19 +45,14 @@ const ExportRecipesByUser = ({category, limit, byUser}) => {
                 />
                 <Card.Body>
                   <Card.Title>{socket.name}</Card.Title>
-                  <Card.Text>
-                  {/*<TextTruncate
-                    line={0}
-                    element="span"
-                    truncateText="…"
-                    text={ReactHtmlParser(socket.description)}
-                    //textTruncateChild={<a href="#">Read on</a>}
-                  />*/}  
+                  <Card.Text className="font-weight-bold">
                   {ReactHtmlParser(socket.description)}
+                  <i className="fa fa-tag rose mb-3"></i> Catégorie: <Link to={`../categories/${socket.category}/`}><CategoryBadge className="badge-primary badge">{capitalize(socket.category)}</CategoryBadge></Link>
+                  <br/> <i className="fa fa-user-circle rose"></i> Publiée par: <Link to={`../chefs/${socket.authorId}`}><span style={{color: '#000'}}>{socket.byUser}</span></Link>  
                   </Card.Text>
                   <Link to={`../recettes/${socket.category}/${socket.id}`}>
                     <Button
-                      className="px-3 py-2"
+                      className="px-5 btn-block py-2 font-weight-bold"
                       style={{borderRadius: '2em'}}
                       variant="primary"
                     >
@@ -72,3 +70,13 @@ const ExportRecipesByUser = ({category, limit, byUser}) => {
 };
 
 export default ExportRecipesByUser;
+
+// Styles
+
+const CategoryBadge = styled.span`
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  padding-top: 0.2em;
+  border-radius: 10rem;
+  font-size: 0.9em;
+`;

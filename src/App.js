@@ -41,7 +41,7 @@ import ForgotPassword from './components/pages/ForgotPassword';
 import PrivateRoute from './components/auth/PrivateRoute';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Contact from './components/pages/Contact';
-import User from './components/pages/User';
+import EditProfile from './components/pages/EditProfile';
 
 const App = () => {
   //var user = firebase.auth().currentUser;
@@ -55,6 +55,7 @@ const App = () => {
           <ProtectedRoute path="/forgot-password" component={ForgotPassword} />
           <PrivateRoute path="/add-recipe" component={AddRecipe} />
           <PrivateRoute path="/contact" component={Contact} />
+          <PrivateRoute path="/edit-profile" component={EditProfile} />
 
           <Route path="/faq">
             <FAQ />
@@ -74,10 +75,6 @@ const App = () => {
 
           <Route path="/search">
             <Search />
-          </Route>
-
-          <Route path="/u">
-            <User />
           </Route>
 
           <Route path="/categories">

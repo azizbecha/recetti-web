@@ -15,16 +15,17 @@ const AddRecipe = () => {
   const [image, setImage] = useState('');
   const nameRef = useRef();
   const categoryRef = useRef();
-  const [loading, setLoading] = useState(false);
+  
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState("");
 
+  const [loading, setLoading] = useState(false);
   const {currentUser} = useAuth();
   const [socket, setSocket] = useState({});
 
   const history = useHistory();
 
-  const makeId = length => {
+  const makeId = (length) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -33,6 +34,11 @@ const AddRecipe = () => {
     }
     return result;
   };
+
+  function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const emptyInputs = () => {
     setImage('');
     nameRef.current.value = '';
@@ -93,7 +99,7 @@ const AddRecipe = () => {
                 .set({
                   image: downloadURL,
                   id: recipeId,
-                  name: nameRef.current.value,
+                  name: capitalize(nameRef.current.value),
                   ingredients: ingredients,
                   description: description,
                   category: categoryRef.current.value,

@@ -79,9 +79,6 @@ const UserDetails = () => {
   const [userName, setUsername] = useState('');
   const [userJoindate, setUserjoindate] = useState('');
 
-  function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
   document.title = `Recetti`;
   useFireStore
     .collection('users')
