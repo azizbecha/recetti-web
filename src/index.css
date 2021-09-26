@@ -61,6 +61,12 @@ body {
   
 .btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem #cc1427;
+  background-color: #f72439;
+}
+
+.btn-primary:focus:after, .btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem #cc1427;
+  background-color: #f72439;
 }
   
 .btn-primary.disabled, .btn-primary:disabled {

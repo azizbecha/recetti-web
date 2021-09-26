@@ -11,6 +11,8 @@ import {message} from 'antd';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
+import Footer from '../Footer';
+
 const Contact = () => {
   document.title = 'Contact - Recetti';
   const firstNameRef = useRef();
@@ -72,8 +74,8 @@ const Contact = () => {
         }*/
   };
   return (
-    <div>
-      <Container>
+    <>
+      <Container className="mb-5">
         <h2 className="mt-5 mb-4 font-weight-bold text-center">
           <i className="fa fa-paper-plane rose"></i> Contacter nous
         </h2>
@@ -88,7 +90,7 @@ const Contact = () => {
                 required
                 type="text"
                 className="form-control"
-                placeholder="Entrer le nom de la recette"
+                placeholder="Entrer votre nom"
               />
             </div>
             <div className="form-group mb-3 mt-3 col-6">
@@ -100,7 +102,7 @@ const Contact = () => {
                 required
                 type="text"
                 className="form-control"
-                placeholder="Entrer le nom de la recette"
+                placeholder="Entrer votre prénom"
               />
             </div>
           </div>
@@ -114,7 +116,7 @@ const Contact = () => {
                 required
                 type="text"
                 className="form-control"
-                placeholder="Entrer le nom de la recette"
+                placeholder="Entrer votre email"
               />
             </div>
             <div className="form-group mb-3 mt-3 col-6">
@@ -135,29 +137,17 @@ const Contact = () => {
               Sujet <span className="rose">*</span>
             </label>
             <select className="form-control" ref={subjectRef} required>
-              <option value="" selected disabled hidden>
-                Select a subject
+              <option selected disabled hidden>-- Veuillez choisir un sujet --</option>
+              <option value="Signaler une erreur / un utilisateur">
+                Signaler une erreur / un utilisateur
               </option>
-              <option value="Presale product questions">
-                Presale product questions
+              <option value="Suggérer une fonctionnalité">
+                Suggérer une fonctionnalité
               </option>
-              <option value="Technical support">Technical support</option>
-              <option value="Product registration assistance">
-                Product registration assistance
-              </option>
-              <option value="Software authorization assistance">
-                Software authorization assistance
-              </option>
-              <option value="Bug report">Bug report</option>
-              <option value="Warranty claim or service inquiry">
-                Warranty claim or service inquiry
-              </option>
-              <option value="Parts inquiry">Parts inquiry</option>
-              <option value="Sales order assistance or status">
-                Sales order assistance or status
-              </option>
-              <option value="Customer feedback">Customer feedback</option>
-              <option value="Other">Other</option>
+              <option value="Technical support">Support technique</option>
+
+              <option value="Donner un avis">Donner un avis</option>
+              <option value="Autre">Autre</option>
             </select>
           </div>
           <div className="form-group">
@@ -168,18 +158,18 @@ const Contact = () => {
               ref={messageRef}
               required
               rows="5"
-              type="text"
               className="form-control"
-              placeholder="Entrer les ingrédients de la recette"
+              placeholder="Entrer votre message"
             ></textarea>
           </div>
 
           <button type="submit" className="btn btn-primary btn-block">
-            <i className="fa fa-arrow-right"></i> Envoyer
+            <i className="fa fa-paper-plane"></i> Envoyer
           </button>
         </form>
       </Container>
-    </div>
+      <Footer />
+    </>
   );
 };
 

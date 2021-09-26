@@ -1,22 +1,17 @@
 import React from 'react';
-import {Link, useRouteMatch, useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/storage';
-import 'firebase/auth';
+import {auth} from './auth/Firebase';
 import {useAuth} from './auth/AuthContext';
 import logo from './assets/images/recetti-logo.png';
 import {message} from 'antd';
 import 'antd/dist/antd.css';
-//var user = firebase.auth().currentUser;
 
 export default function NavBar() {
   const history = useHistory();
   const {currentUser} = useAuth();
   const logOutUser = () => {
-    firebase
-      .auth()
+    auth
       .signOut()
       .then(() => {
         message.success('Déconnecté avec succés !', 3);
@@ -87,6 +82,16 @@ export default function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
+            <Nav.Link>
+              <Link  to={`../../../../add-recipe`}>
+                  <i className="fa fa-plus"></i> Ajouter Une recette
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link  to={`../../../../contact`}>
+                  <i className="fa fa-phone"></i> Contact
+              </Link>
+            </Nav.Link>
             <NavDropdown
               alignRight
               id="dropdown-basic nav-dropdown"
@@ -99,13 +104,8 @@ export default function NavBar() {
               }
             >
               <NavDropdown.Item>
-                <Link style={{color: 'black'}} to={`profile`}>
+                <Link style={{color: 'black'}} to={`../../../../chefs/${currentUser.uid}`}>
                   Mon profil
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link style={{color: 'black'}} to={`add-recipe`}>
-                  Ajouter Une recette
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item onClick={logOutUser}>
