@@ -60,7 +60,7 @@ export default function MainHeading() {
                   </select>
                 </div>
                 <button type="submit" className="btn btn-primary btn-block">
-                  Rechercher
+                  <i className="fa fa-search"></i> Rechercher
                 </button>
               </div>
             </form>
