@@ -123,9 +123,9 @@ const UserDetails = () => {
       return (
         <Container className="mt-3">
           <div className="text-center font-weight-bold mt-5">
-            <h1>Recette non trouvée</h1>
+            <h1>Utilisateur non trouvé</h1>
             <br />
-            <h3>La recette que vous cherchez n'est pas trouvée dans Recetti !</h3>
+            <h3>L'utilisateur que vous cherchez n'est pas inscrit dans Recetti !</h3>
             <h3>Si vous pensez que c&apos;est un erreur causé par notre platforme, Veuillez nous contacter pour fixer cet erreur</h3>
             <br />
             <Link to="../../"><span className="btn btn-primary btn-lg"><i className="fa fa-arrow-right"></i> Retour a la page d&apos;acceuil</span></Link>
