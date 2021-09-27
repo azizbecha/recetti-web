@@ -7,12 +7,16 @@ import {
   useRouteMatch,
   useParams,
 } from 'react-router-dom';
+
 import {Container} from 'react-bootstrap';
+
 export default function Forum() {
+
   let match = useRouteMatch();
   document.title = 'Forum - Recetti';
+
   return (
-    <div>
+    <>
       <Container fluid>
         <Switch>
           <Route path={`${match.path}/:forumId`}>
@@ -26,7 +30,7 @@ export default function Forum() {
           </Route>
         </Switch>
       </Container>
-    </div>
+    </>
   );
 }
 

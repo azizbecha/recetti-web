@@ -1,17 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route,Link,useRouteMatch,useParams} from 'react-router-dom';
+
 import {Container, Row, Card, Col, Button} from 'react-bootstrap';
 import ReactHtmlParser from 'react-html-parser';
 import styled from 'styled-components';
 import {useFireStore} from '../auth/Firebase';
+
 const Search = () => {
+
   let match = useRouteMatch();
   return (
     <Router>
@@ -25,6 +21,7 @@ const Search = () => {
 };
 
 function SearchResult() {
+
   function capitalize(word) {
     const lower = word.toLowerCase();
     return word.charAt(0).toUpperCase() + lower.slice(1);
@@ -34,6 +31,7 @@ function SearchResult() {
   let {Category, Keyword} = useParams();
   
   Keyword.replace('%20', ' ');
+  
   useEffect(() => {
     const pullData = async () => {
       return await useFireStore

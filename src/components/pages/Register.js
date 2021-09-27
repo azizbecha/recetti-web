@@ -9,21 +9,24 @@ import '../../index.css';
 import '../styles/Register.css';
 
 // Firebase
-import {useFireStore} from '../auth/Firebase';
-import firebase from 'firebase/app';
+import {auth, useFireStore} from '../auth/Firebase';
 
 import {message} from 'antd';
 import 'antd/dist/antd.css';
 
 const Register = () => {
+
   document.title = "S'inscrire - Recetti";
+  
   let history = useHistory();
+  
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
   const AddUser = () => {
     if (password !== confirmPassword) {
       return message.error('Les mots de passe ne correspondant pas', 3);
@@ -34,12 +37,11 @@ const Register = () => {
     var year = new Date().getFullYear();
     var today = day + '/' + month + '/' + year;
 
-    firebase
-      .auth()
+    auth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        firebase.auth().signInWithEmailAndPassword(email, password);
-        var user = firebase.auth().currentUser;
+        auth.signInWithEmailAndPassword(email, password);
+        var user = auth.currentUser;
         var uid = user.uid;
         useFireStore
           .collection('users')
@@ -69,7 +71,7 @@ const Register = () => {
     //} else {}
   };
   return (
-    <div>
+    <>
       <div className="signup-form body">
         <div className="form">
           <h2>Créer un compte</h2>
@@ -150,7 +152,7 @@ const Register = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

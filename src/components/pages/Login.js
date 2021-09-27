@@ -1,14 +1,19 @@
 import React, {useRef, useState} from 'react';
-import {useAuth} from '../auth/AuthContext';
 import {Link, useHistory} from 'react-router-dom';
+
+import {useAuth} from '../auth/AuthContext';
+
 import Footer from '../Footer';
 
 import {message} from 'antd';
-import '../styles/Login.css';
-import '../../App.css';
+
 import logo from '../assets/images/recetti-logo.png';
 
+import '../styles/Login.css';
+import '../../App.css';
+
 const Login = () => {
+
   document.title = 'Se Connecter - Recetti';
 
   const emailRef = useRef();
@@ -18,7 +23,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  const handleSumbit = async e => {
+  const handleSumbit = async (e) => {
+
     // prevent all default exeptions
     e.preventDefault();
 

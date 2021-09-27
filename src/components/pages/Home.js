@@ -1,5 +1,4 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams,} from 'react-router-dom';
 import {Container} from 'react-bootstrap';
 
 import '../../index.css';
@@ -10,12 +9,12 @@ import 'aos/dist/aos.css';
 import ExportRecipes from '../ExportRecipes';
 
 class Home extends React.Component {
+
   componentDidMount() {
     AOS.init({
       duration: 500,
     });
-    document.title =
-      'Recetti - Votre meilleur espace de découvrir et partager des recettes';
+    document.title = 'Recetti - Votre meilleur espace de découvrir et partager des recettes';
   }
 
   render() {
@@ -35,11 +34,12 @@ class Home extends React.Component {
     return (
       <Container>
         <center>
-          <h2 data-aos="fade-up" className="font-weight-bold">
+          {/* <h2 data-aos="fade-up" className="font-weight-bold">
             <i style={{color: '#f64152'}} className="fa fa-eye"></i> Trouvez des
             recettes a partir de ce que vous avez dans votre Frigo !
           </h2>
           <br />
+          
           <form method="GET" action="search">
             <div className="form-row">
               <div data-aos="zoom-in" className="col">
@@ -84,13 +84,17 @@ class Home extends React.Component {
           <br />
           <hr style={{borderWidth: '4px'}} />
           <br />
+          */}
+          
           <h2 className="font-weight-bold mb-4">
             <i className="fa fa-random rose"></i> Recettes a la une
           </h2>
+
           <ExportRecipes limit="3" category={'petit-dejeuner'} />
           <ExportRecipes limit="3" category={'dejeuner'} />
           <ExportRecipes limit="3" category={'diner'} />
           <ExportRecipes limit="3" category={'dessert'} />
+          
         </center>
         <br />
       </Container>

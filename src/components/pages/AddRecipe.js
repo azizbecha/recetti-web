@@ -1,11 +1,15 @@
 import React, {useState, useEffect, useRef} from 'react';
+import {useHistory} from 'react-router-dom';
+
 import {useFireStore, useFireStorage} from '../auth/Firebase';
 import {useAuth} from '../auth/AuthContext';
-import {useHistory} from 'react-router-dom';
+
 import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+
 import {message} from 'antd';
 import 'antd/dist/antd.css';
+
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
 

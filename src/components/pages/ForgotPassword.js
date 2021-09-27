@@ -13,12 +13,15 @@ import {Row, message} from 'antd';
 import Footer from '../Footer';
 
 const ForgotPassword = () => {
+
   document.title = 'Récupérer votre mot de passe - Recetti';
+
   const emailRef = useRef();
   const {resetPassword} = useAuth();
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const handleSumbit = async e => {
+
+  const handleSumbit = async (e) => {
     e.preventDefault();
     message.info('Veuillez attendre ...', 2.5);
     try {

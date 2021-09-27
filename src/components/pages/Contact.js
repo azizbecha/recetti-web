@@ -14,7 +14,9 @@ import PhoneInput from 'react-phone-number-input';
 import Footer from '../Footer';
 
 const Contact = () => {
+
   document.title = 'Contact - Recetti';
+
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
@@ -22,6 +24,7 @@ const Contact = () => {
   const messageRef = useRef();
   const [number, setNumber] = useState();
   const history = useHistory();
+
   const emptyInputs = () => {
     firstNameRef.current.value = '';
     lastNameRef.current.value = '';
@@ -30,6 +33,7 @@ const Contact = () => {
     subjectRef.current.value = '';
     messageRef.current.value = '';
   };
+
   const makeId = length => {
     var result = '';
     var characters =
@@ -40,7 +44,8 @@ const Contact = () => {
     }
     return result;
   };
-  const submitMessage = async e => {
+
+  const submitMessage = async (e) => {
     e.preventDefault();
     var messageId = makeId(20);
     // try {
@@ -73,6 +78,7 @@ const Contact = () => {
             message.error("Une erreur s'est produite !",2);
         }*/
   };
+  
   return (
     <>
       <Container className="mb-5">

@@ -14,7 +14,6 @@ import Footer from '../Footer';
 
 import {Container, Row} from 'react-bootstrap';
 
-//import logo from '../assets/images/recetti-logo.png';
 import PetitDej from '../assets/images/petit-dej.jpg';
 import Dej from '../assets/images/dej.jpg';
 import Diner from '../assets/images/diner.jpg';
@@ -45,7 +44,7 @@ export default function Categories() {
                         className="card-img-top img-fluid"
                         style={{width: '100%'}}
                         src={PetitDej}
-                        alt="Card image cap"
+                        alt="Petit déjeuner"
                       />
                       <div className="card-body">
                         <h5 className="card-title font-weight-bold">
@@ -68,7 +67,7 @@ export default function Categories() {
                         className="card-img-top img-fluid"
                         style={{width: '100%'}}
                         src={Dej}
-                        alt="Card image cap"
+                        alt="Déjeuner"
                       />
                       <div className="card-body">
                         <h5 className="card-title font-weight-bold">Déjeuner</h5>
@@ -89,7 +88,7 @@ export default function Categories() {
                         className="card-img-top img-fluid"
                         style={{width: '100%'}}
                         src={Diner}
-                        alt="Card image cap"
+                        alt="Diner"
                       />
                       <div className="card-body">
                         <h5 className="card-title font-weight-bold">Dîner</h5>
@@ -110,7 +109,7 @@ export default function Categories() {
                         className="card-img-top img-fluid"
                         style={{width: '100%'}}
                         src={Dessert}
-                        alt="Card image cap"
+                        alt="Dessert"
                       />
                       <div className="card-body">
                         <h5 className="card-title font-weight-bold">Dessert</h5>

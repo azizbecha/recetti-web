@@ -1,6 +1,8 @@
 import React from 'react';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap';
+
 function FAQ() {
   document.title = 'Questions fréquemment posées - Recetti';
   return (

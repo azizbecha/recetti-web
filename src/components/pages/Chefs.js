@@ -7,6 +7,7 @@ import {
   useRouteMatch,
   useParams,
 } from 'react-router-dom';
+
 import {useFireStore} from '../auth/Firebase';
 import {Container, Row, Card, Col} from 'react-bootstrap';
 import ExportRecipesByUser from '../ExportRecipesByUser';
@@ -46,6 +47,7 @@ const AllChefs = () => {
 
     pullData();
   }, []);
+
   document.title = "Chefs - Recetti";
   return (
     <Container className="text-center">
@@ -80,6 +82,7 @@ const UserDetails = () => {
   const [userJoindate, setUserjoindate] = useState('');
 
   document.title = `Recetti`;
+
   useFireStore
     .collection('users')
     .doc(`${UserID}`)
@@ -93,7 +96,6 @@ const UserDetails = () => {
         setUserjoindate(data.joinDate);
         document.title = `${userFirstname} ${userLastname} - Recetti`;
       }
-      
     });
 
   if (userName!=="") {
@@ -108,7 +110,6 @@ const UserDetails = () => {
           </div>
           <br />
           <h3 className="font-weight-bold mb-4"><i className="fa fa-clock-o rose"></i> A rejoint Recetti le {userJoindate}</h3>
-
           <h3 className="font-weight-bold mb-2"><i className="fa fa-plus rose"></i> Recettes ajoutés par {fullUserName}</h3>
           <ExportRecipesByUser byUser={fullUserName} category={"petit-dejeuner"} />
           <ExportRecipesByUser byUser={fullUserName} category={"dejeuner"} />

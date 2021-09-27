@@ -10,34 +10,33 @@ import {
 
 import styled from 'styled-components';
 import {useFireStore} from '../auth/Firebase';
-import {Container, Row, Alert, Button} from 'react-bootstrap';
 import ExportRecipes from '../ExportRecipes';
 import Footer from '../Footer';
-import 'bootstrap/dist/css/bootstrap.css';
-import '../../index.css';
+import {Container} from 'react-bootstrap';
 import ReactHtmlParser from 'react-html-parser';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import '../../index.css';
+
 export default function Recettes() {
+
   document.title = 'Recettes - Recetti';
   let match = useRouteMatch();
-  return (
-    <div>
-      <Switch>
-        <Route path={`${match.path}/:Category/:RecetteID`}>
-          <DetailsRecette />
-        </Route>
 
-        <Route path={match.path}>
-          <TousLesRecettes />
-        </Route>
-      </Switch>
-    </div>
+  return (
+    <Switch>
+      <Route path={`${match.path}/:Category/:RecetteID`}>
+        <DetailsRecette />
+      </Route>
+
+      <Route path={match.path}>
+        <TousLesRecettes />
+      </Route>
+    </Switch>
   );
 }
 
 const TousLesRecettes = () => {
-  const [error, setError] = useState('');
-  const [sockets, setSockets] = useState([]);
 
   return (
     <Container className="text-center">
@@ -85,10 +84,13 @@ const DetailsRecette = () => {
   const [recipeID, setRecipeID] = useState('');
   const [recipeAuthorID, setRecipeAuthorID] = useState('');
   const [recipeImage, setRecipeImage] = useState('');
+
   function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
   document.title = `Recetti`;
+
   useFireStore
     .collection('bucket/')
     .doc('recipes')
@@ -149,7 +151,9 @@ const DetailsRecette = () => {
       </>
     );
   } else {
+
       document.title = `Recette non trouvée - Recetti`;
+      
       return (
         <Container className="mt-3">
           <div className="text-center font-weight-bold mt-5">

@@ -20,15 +20,13 @@
 ## TO-DO
 
 - Add FAQ
-- Add links to the Footer/Navbar
 - Customize SEO tags
-- Convert CSS code to native components with styled-components
 - Improve the UI of See Recipe components
 - Design the 404 not found page component
 - Add share buttons
 - Add feature users can add profile picture and update their infos
 - Fix overflow issue in mobile phones & iPads
-- 
+
 
 ## About
 ### Recetti is a platform used to share recipes with others.
