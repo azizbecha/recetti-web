@@ -9,6 +9,7 @@ export default function MainHeading() {
   const GoSearch = () => {
     history.push(`search/${category}/${keyword}`);
   };
+  
   return (
     <div className="jumbotron text-center">
       <center>

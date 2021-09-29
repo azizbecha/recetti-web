@@ -1,20 +1,25 @@
 import React, {useRef, useState} from 'react';
-
 import {useHistory} from 'react-router-dom';
 
+// Bootstrap
 import {Container} from 'react-bootstrap';
 
+// Firestore database
 import {useFireStore} from '../auth/Firebase';
 
+// antd message component
 import {message} from 'antd';
 
+// Phone input library
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
+// Footer component
 import Footer from '../Footer';
 
 const Contact = () => {
 
+  // Page title
   document.title = 'Contact - Recetti';
 
   const firstNameRef = useRef();
@@ -34,10 +39,10 @@ const Contact = () => {
     messageRef.current.value = '';
   };
 
+  // Function to create an ID
   const makeId = length => {
     var result = '';
-    var characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
     for (var i = 0; i < length; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -47,9 +52,15 @@ const Contact = () => {
 
   const submitMessage = async (e) => {
     e.preventDefault();
+
+    // Generate ID
     var messageId = makeId(20);
     // try {
+
+    // Show message to the user
     message.info('Veuillez attendre ...', 2.5);
+
+    // Add message to the database
     await useFireStore
       .collection('messages')
       .doc(messageId)
@@ -64,11 +75,14 @@ const Contact = () => {
         id: messageId,
       })
       .then(() => {
+        // Show a success message to the user
         message.success(
-          "Votre message a été bien recu \n Merci d'être en contact avec nous.",
+          "Votre message a été bien recu. Merci d'être en contact avec nous.",
           3,
         );
         emptyInputs();
+
+        // Redirect to the homepage
         history.push('/');
       })
       .catch(() => {

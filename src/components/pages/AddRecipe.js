@@ -1,21 +1,27 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useHistory} from 'react-router-dom';
 
+// Firebase & Auth
 import {useFireStore, useFireStorage} from '../auth/Firebase';
 import {useAuth} from '../auth/AuthContext';
 
+// Bootstrap 4
 import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
+// ANTD components
 import {message} from 'antd';
 import 'antd/dist/antd.css';
 
+// React Quill for the text editor
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
 
 const AddRecipe = () => {
 
+  // Page title
   document.title = 'Ajouter une Recette - Recetti';
+
   const [image, setImage] = useState('');
   const nameRef = useRef();
   const categoryRef = useRef();
@@ -29,6 +35,7 @@ const AddRecipe = () => {
 
   const history = useHistory();
 
+  // function to generate a unique ID for the recipe
   const makeId = (length) => {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -39,6 +46,7 @@ const AddRecipe = () => {
     return result;
   };
 
+  // Function to capitalize strings
   function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -50,6 +58,7 @@ const AddRecipe = () => {
     setDescription("");
     categoryRef.current.value = '';
   };
+
   const GetProfileData = async () => {
     const docs = useFireStore.collection('users').doc(`${currentUser.uid}`);
     const docsRef = await docs.get();
@@ -72,13 +81,20 @@ const AddRecipe = () => {
   const submitRecipe = async e => {
     e.preventDefault();
     try {
+
+      // Disable button and show a message for the user
       setLoading(true);
       message.info('Veuillez attendre ...', 2.5);
 
+      // Show an error message if the image is empty
       if (image == null) {
         message.error('Vous devez ajouter une image pour la recette !', 3);
       }
+
+      // Generate an ID
       const recipeId = makeId(15);
+
+      // Upload image
       const uploadImage = useFireStorage
         .ref(`/recettes/${recipeId}`)
         .put(image);
@@ -91,6 +107,8 @@ const AddRecipe = () => {
           console.log(error);
         },
         function () {
+
+          // When image upload finished, add data to firestore database
           uploadImage.snapshot.ref
             .getDownloadURL()
             .then(function (downloadURL) {
@@ -112,9 +130,13 @@ const AddRecipe = () => {
                   date: today,
                 })
                 .then(() => {
+                  // After adding data to firestore
+                  // Show success message
                   message.success('Votre recette a été bien ajoutée', 3);
                   emptyInputs();
                   setLoading(false);
+
+                  // Redirect to the recipe page
                   history.push(`recettes/${category}/${recipeId}`);
                 })
                 .catch(error => alert(error));
@@ -122,7 +144,11 @@ const AddRecipe = () => {
         },
       );
     } catch {
+
+      // Show error message
       message.error("Une erreur s'est produite !", 2);
+
+      // Redirect to the home
       history.push('/');
     }
   };

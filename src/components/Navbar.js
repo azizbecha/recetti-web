@@ -1,15 +1,25 @@
 import React from 'react';
 import {Link, useHistory} from 'react-router-dom';
+
+// Bootstrap
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+
+// Auth
 import {auth} from './auth/Firebase';
 import {useAuth} from './auth/AuthContext';
+
+// Logo
 import logo from './assets/images/recetti-logo.png';
+
+// antd message component
 import {message} from 'antd';
 import 'antd/dist/antd.css';
 
 export default function NavBar() {
   const history = useHistory();
   const {currentUser} = useAuth();
+
+  // Logout function
   const logOutUser = () => {
     auth
       .signOut()
@@ -18,6 +28,8 @@ export default function NavBar() {
         history.push('/');
       });
   };
+
+  // If user is signed in
   if (currentUser) {
     return (
       <Navbar
@@ -117,6 +129,8 @@ export default function NavBar() {
       </Navbar>
     );
   } else {
+
+    // If user not signed in
     return (
       <Navbar
         style={{backgroundColor: '#f64152', color: '#fff'}}

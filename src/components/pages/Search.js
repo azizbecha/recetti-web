@@ -1,9 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router,Switch,Route,Link,useRouteMatch,useParams} from 'react-router-dom';
 
+// Bootstrap
 import {Container, Row, Card, Col, Button} from 'react-bootstrap';
+
+// Library to render html codes inside strings
 import ReactHtmlParser from 'react-html-parser';
+
 import styled from 'styled-components';
+
+// Firestore database
 import {useFireStore} from '../auth/Firebase';
 
 const Search = () => {
@@ -34,6 +40,7 @@ function SearchResult() {
   
   useEffect(() => {
     const pullData = async () => {
+      // Get docs from firestore database where name like keyword
       return await useFireStore
         .collection('bucket')
         .doc('recipes')

@@ -1,23 +1,34 @@
 import React from 'react';
+
+// Boostrap 4
 import {Container} from 'react-bootstrap';
 
+// Css file
 import '../../index.css';
 
+// Animation on scroll library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// ExportRecipes component
 import ExportRecipes from '../ExportRecipes';
 
 class Home extends React.Component {
 
   componentDidMount() {
+
+    // Init AOS library
     AOS.init({
       duration: 500,
     });
+
+    // Page title
     document.title = 'Recetti - Votre meilleur espace de découvrir et partager des recettes';
   }
 
   render() {
+
+    // Meta tags to be used for SEO optimization
     const meta = {
       title:
         'Recetti - Votre meulleur espace de découvrir et partager des recettes.',
@@ -31,6 +42,7 @@ class Home extends React.Component {
         },
       },
     };
+    
     return (
       <Container>
         <center>

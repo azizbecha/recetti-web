@@ -1,18 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+
+// Firestore database
 import {useFireStore} from './auth/Firebase';
+
+// Bootstrap
 import {Container, Row, Button, Card, Col} from 'react-bootstrap';
+
+// Library to render html codes inside strings
 import ReactHtmlParser from 'react-html-parser';
+
 import styled from 'styled-components';
 
 const ExportRecipes = ({category, limit}) => {
 
   const [sockets, setSockets] = useState([]);
+
   function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
   useEffect(() => {
     const pullData = async () => {
+
+      // Get collection from firestore where 
+      // category is the same as defined on the props
+      
       return await useFireStore
         .collection('bucket')
         .doc('recipes')

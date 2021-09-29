@@ -16,6 +16,7 @@ import 'antd/dist/antd.css';
 
 const Register = () => {
 
+  // Page title
   document.title = "S'inscrire - Recetti";
   
   let history = useHistory();
@@ -37,9 +38,12 @@ const Register = () => {
     var year = new Date().getFullYear();
     var today = day + '/' + month + '/' + year;
 
+    // Create user wth email and password
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
+        
+        // After creating a user, get his id then create new user in the firestore database
         auth.signInWithEmailAndPassword(email, password);
         var user = auth.currentUser;
         var uid = user.uid;

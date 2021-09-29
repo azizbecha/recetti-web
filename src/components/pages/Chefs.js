@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
+// Firebase firestore database
 import {useFireStore} from '../auth/Firebase';
+
+// Bootstrap 4
 import {Container, Row, Card, Col} from 'react-bootstrap';
+
+// Export Recipes component
 import ExportRecipesByUser from '../ExportRecipesByUser';
 
 const Chefs = () => {
@@ -30,8 +28,10 @@ const Chefs = () => {
 };
 
 const AllChefs = () => {
+
   const [sockets, setSockets] = useState([]);
 
+  // Fetch users from firestore database
   useEffect(() => {
     const pullData = async () => {
       return await useFireStore
@@ -48,7 +48,9 @@ const AllChefs = () => {
     pullData();
   }, []);
 
+  //Page title
   document.title = "Chefs - Recetti";
+
   return (
     <Container className="text-center">
       <Row>
@@ -74,6 +76,7 @@ const AllChefs = () => {
 }
 
 const UserDetails = () => {
+
   let {UserID} = useParams();
 
   const [userFirstname, setUserFirstname] = useState('');
@@ -81,6 +84,7 @@ const UserDetails = () => {
   const [userName, setUsername] = useState('');
   const [userJoindate, setUserjoindate] = useState('');
 
+  //Page title
   document.title = `Recetti`;
 
   useFireStore
@@ -98,7 +102,7 @@ const UserDetails = () => {
       }
     });
 
-  if (userName!=="") {
+  if (userName !== "") {
     var fullUserName = userFirstname + " " + userLastname;
     return (
       <>

@@ -1,19 +1,25 @@
 import React, {useRef, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 
+// Auth
 import {useAuth} from '../auth/AuthContext';
 
+// Footer component
 import Footer from '../Footer';
 
+// antd message component
 import {message} from 'antd';
 
+// Logo
 import logo from '../assets/images/recetti-logo.png';
 
+// Cs custom styles
 import '../styles/Login.css';
 import '../../App.css';
 
 const Login = () => {
 
+  // Page title
   document.title = 'Se Connecter - Recetti';
 
   const emailRef = useRef();
@@ -30,10 +36,20 @@ const Login = () => {
 
     if (emailRef.current.value || passwordRef.current.value === '') {
       try {
+
+        // Disable button
         setLoading(true);
+
+        // Show waiting message to the user
         message.info('Veuillez attendre ...', 1.5);
+
+        // Try login attempt
         await login(emailRef.current.value, passwordRef.current.value);
+
+        // Show success message to the user
         message.success('Connecté avec succés !', 3);
+
+        // Rdirect to the homepage
         history.push('/');
       } catch {
         message.error('Please verify your informations');

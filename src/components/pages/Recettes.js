@@ -1,26 +1,30 @@
 import React, {useState} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
 import styled from 'styled-components';
+
+// Firestore database
 import {useFireStore} from '../auth/Firebase';
+
+// ExportRecipes component
 import ExportRecipes from '../ExportRecipes';
+
+// Footer component
 import Footer from '../Footer';
-import {Container} from 'react-bootstrap';
+
+// Library to render html codes inside strings
 import ReactHtmlParser from 'react-html-parser';
 
+// Bootstrap 4
+import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../index.css';
 
 export default function Recettes() {
 
+  // Page title
   document.title = 'Recettes - Recetti';
+
   let match = useRouteMatch();
 
   return (
@@ -73,6 +77,7 @@ const TousLesRecettes = () => {
 };
 
 const DetailsRecette = () => {
+
   let {RecetteID, Category} = useParams();
 
   const [recipeName, setRecipeName] = useState('');
@@ -89,8 +94,10 @@ const DetailsRecette = () => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  // Page title
   document.title = `Recetti`;
 
+  // Get data from firestore database
   useFireStore
     .collection('bucket/')
     .doc('recipes')
@@ -152,20 +159,21 @@ const DetailsRecette = () => {
     );
   } else {
 
-      document.title = `Recette non trouvée - Recetti`;
-      
-      return (
-        <Container className="mt-3">
-          <div className="text-center font-weight-bold mt-5">
-            <h1>Recette non trouvée</h1>
-            <br />
-            <h3>La recette que vous cherchez n'est pas trouvée dans Recetti !</h3>
-            <h3>Si vous pensez que c&apos;est un erreur causé par notre platforme, Veuillez nous contacter pour fixer cet erreur</h3>
-            <br />
-            <Link to="../../"><span className="btn btn-primary btn-lg"><i className="fa fa-arrow-right"></i> Retour a la page d&apos;acceuil</span></Link>
-          </div>
-        </Container>
-      )
+    // Page title
+    document.title = `Recette non trouvée - Recetti`;
+    
+    return (
+      <Container className="mt-3">
+        <div className="text-center font-weight-bold mt-5">
+          <h1>Recette non trouvée</h1>
+          <br />
+          <h3>La recette que vous cherchez n'est pas trouvée dans Recetti !</h3>
+          <h3>Si vous pensez que c&apos;est un erreur causé par notre platforme, Veuillez nous contacter pour fixer cet erreur</h3>
+          <br />
+          <Link to="../../"><span className="btn btn-primary btn-lg"><i className="fa fa-arrow-right"></i> Retour a la page d&apos;acceuil</span></Link>
+        </div>
+      </Container>
+    )
   }
 };
 

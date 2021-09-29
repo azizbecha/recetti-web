@@ -1,30 +1,30 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route,Link,useRouteMatch,useParams,} from 'react-router-dom';
 
+// CSS file
 import '../../index.css';
 
 import Footer from '../Footer';
 
+// Bootstrap
 import {Container, Row} from 'react-bootstrap';
 
+// Images
 import PetitDej from '../assets/images/petit-dej.jpg';
 import Dej from '../assets/images/dej.jpg';
 import Diner from '../assets/images/diner.jpg';
 import Dessert from '../assets/images/dessert.jpg';
 import ExportRecipes from '../ExportRecipes';
 
-export default function Categories() {
+export default function Categories () {
+
   let match = useRouteMatch();
+
+  // Page title
   document.title = 'Catégories - Recetti';
+
   return (
-    <div>
+    <>
       <Switch>
         <Route path={`${match.path}/:categoName`}>
           <CategoryDetails />
@@ -130,12 +130,16 @@ export default function Categories() {
           <Footer />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 }
 
 function CategoryDetails() {
+
+  // Get the category name from the link
   let {categoName} = useParams();
+
+  // Capitalize string
   function capitalize(word) {
     const lower = word.toLowerCase();
     return word.charAt(0).toUpperCase() + lower.slice(1).replace('-', ' ');
@@ -144,7 +148,7 @@ function CategoryDetails() {
   document.title = capitalize(categoName) + ' - Recetti';
 
   return (
-    <center>
+    <div className="text-center">
       <h2 className="mt-5 font-weight-bold">
         {' '}
         <i className="fa fa-tag rose"></i> Catégorie: {capitalize(categoName)}
@@ -156,6 +160,6 @@ function CategoryDetails() {
           </Row>
         </div>
       </Container>
-    </center>
+    </div>
   );
 }
