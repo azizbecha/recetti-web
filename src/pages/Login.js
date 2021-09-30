@@ -5,7 +5,7 @@ import {Link, useHistory} from 'react-router-dom';
 import {useAuth} from '../auth/AuthContext';
 
 // Footer component
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 // antd message component
 import {message} from 'antd';
@@ -13,9 +13,9 @@ import {message} from 'antd';
 // Logo
 import logo from '../assets/images/recetti-logo.png';
 
-// Cs custom styles
+// Css custom styles
 import '../styles/Login.css';
-import '../../App.css';
+import '../App.css';
 
 const Login = () => {
 

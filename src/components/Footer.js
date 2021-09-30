@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './assets/images/recetti-logo.png';
+import logo from '../assets/images/recetti-logo.png';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Footer() {

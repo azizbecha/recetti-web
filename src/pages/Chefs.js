@@ -8,7 +8,7 @@ import {useFireStore} from '../auth/Firebase';
 import {Container, Row, Card, Col} from 'react-bootstrap';
 
 // Export Recipes component
-import ExportRecipesByUser from '../ExportRecipesByUser';
+import ExportRecipesByUser from '../hooks/ExportRecipesByUser';
 
 const Chefs = () => {
   let match = useRouteMatch();
@@ -64,7 +64,7 @@ const AllChefs = () => {
                   <Card.Text>
                     <i className="fa fa-clock-o rose"></i> A rejoint le {socket.joinDate}
                   </Card.Text>
-                  <Link to={`../chefs/${socket.uid}`}><span className="btn btn-primary font-weight-bold"><i className="fa fa-eye"></i> Voir le profil</span></Link>
+                  <Link to={`../chefs/${socket.uid}`}><span className="btn btn-primary font-weight-bold"><i className="fa fa-eye"></i> Voir la recette le profil</span></Link>
                 </Card.Body>
               </Card>
             </Col>

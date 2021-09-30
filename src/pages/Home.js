@@ -4,14 +4,14 @@ import React from 'react';
 import {Container} from 'react-bootstrap';
 
 // Css file
-import '../../index.css';
+import '../index.css';
 
 // Animation on scroll library
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 // ExportRecipes component
-import ExportRecipes from '../ExportRecipes';
+import ExportRecipes from '../hooks/ExportRecipes';
 
 class Home extends React.Component {
 

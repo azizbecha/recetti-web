@@ -93,7 +93,7 @@ export default function MainHeading() {
               <Link to="categories/dessert">
                 <span
                   data-aos="zoom-in"
-                  className="btn btn-primary mr-1 font-weight-bold"
+                  className="btn btn-primary font-weight-bold"
                 >
                   <i className="fa fa-tag"></i>&nbsp; Dessert
                 </span>

@@ -12,36 +12,36 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import 'antd/dist/antd.css';
 
 // Import CSS
-import './components/styles/Login.css';
-import './components/styles/Register.css';
+import './styles/Login.css';
+import './styles/Register.css';
 
 // Import Bootstrap 4
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 // Auth Components
-import AuthProvider from './components/auth/AuthContext';
+import AuthProvider from './auth/AuthContext';
 
 // Import all our Components to add them to the Route.
 import MainHeading from './components/MainHeading';
 import NavBar from './components/Navbar';
-import Home from './components/pages/Home';
+import Home from './pages/Home';
 import Footer from './components/Footer';
-import Register from './components/pages/Register';
-import Chefs from './components/pages/Chefs';
-import Recettes from './components/pages/Recettes';
-import Forum from './components/pages/Forum';
-import Login from './components/pages/Login';
-import Search from './components/pages/Search';
-import Categories from './components/pages/Categories';
-import AddRecipe from './components/pages/AddRecipe';
-import FAQ from './components/pages/FAQ';
-import NotFound from './components/pages/NotFound';
-import ForgotPassword from './components/pages/ForgotPassword';
-import PrivateRoute from './components/auth/PrivateRoute';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import Contact from './components/pages/Contact';
-import EditProfile from './components/pages/EditProfile';
+import Register from './pages/Register';
+import Chefs from './pages/Chefs';
+import Recettes from './pages/Recettes';
+import Forum from './pages/Forum';
+import Login from './pages/Login';
+import Search from './pages/Search';
+import Categories from './pages/Categories';
+import AddRecipe from './pages/AddRecipe';
+import FAQ from './pages/FAQ';
+import NotFound from './pages/NotFound';
+import ForgotPassword from './pages/ForgotPassword';
+import PrivateRoute from './auth/PrivateRoute';
+import ProtectedRoute from './auth/ProtectedRoute';
+import Contact from './pages/Contact';
+import EditProfile from './pages/EditProfile';
 
 const App = () => {
   //var user = firebase.auth().currentUser;

@@ -11,7 +11,7 @@ import logo from '../assets/images/reset-email.svg';
 import {message} from 'antd';
 
 // Footer component
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 const ForgotPassword = () => {
 

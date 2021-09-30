@@ -1,10 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router,Switch,Route,Link,useRouteMatch,useParams,} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
 // CSS file
-import '../../index.css';
+import '../index.css';
 
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 // Bootstrap
 import {Container, Row} from 'react-bootstrap';
@@ -14,7 +14,7 @@ import PetitDej from '../assets/images/petit-dej.jpg';
 import Dej from '../assets/images/dej.jpg';
 import Diner from '../assets/images/diner.jpg';
 import Dessert from '../assets/images/dessert.jpg';
-import ExportRecipes from '../ExportRecipes';
+import ExportRecipes from '../hooks/ExportRecipes';
 
 export default function Categories () {
 
@@ -56,7 +56,7 @@ export default function Categories () {
                           pour un petit déjeuner équilibré
                         </p>
                         <Link className="btn btn-primary" to={`petit-dejeuner`}>
-                          <i className="fa fa-arrow-right"></i> Voir la categorie
+                          <i className="fa fa-arrow-right"></i> Voir la recette la categorie
                         </Link>
                       </div>
                     </div>
@@ -77,7 +77,7 @@ export default function Categories () {
                           plats pour le déjeuner
                         </p>
                         <Link className="btn btn-primary" to={`dejeuner`}>
-                          <i className="fa fa-arrow-right"></i> Voir la categorie
+                          <i className="fa fa-arrow-right"></i> Voir la recette la categorie
                         </Link>
                       </div>
                     </div>
@@ -98,7 +98,7 @@ export default function Categories () {
                           plats pour le dîner
                         </p>
                         <Link className="btn btn-primary" to={`diner`}>
-                          <i className="fa fa-arrow-right"></i> Voir la categorie
+                          <i className="fa fa-arrow-right"></i> Voir la recette la categorie
                         </Link>
                       </div>
                     </div>
@@ -118,7 +118,7 @@ export default function Categories () {
                           les fruits. Trouvez ici les meilleurs desserts.
                         </p>
                         <Link className="btn btn-primary" to={`dessert`}>
-                          <i className="fa fa-arrow-right"></i> Voir la categorie
+                          <i className="fa fa-arrow-right"></i> Voir la recette la categorie
                         </Link>
                       </div>
                     </div>

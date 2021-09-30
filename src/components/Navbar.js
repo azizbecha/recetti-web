@@ -5,11 +5,11 @@ import {Link, useHistory} from 'react-router-dom';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
 // Auth
-import {auth} from './auth/Firebase';
-import {useAuth} from './auth/AuthContext';
+import {auth} from '../auth/Firebase';
+import {useAuth} from '../auth/AuthContext';
 
 // Logo
-import logo from './assets/images/recetti-logo.png';
+import logo from '../assets/images/recetti-logo.png';
 
 // antd message component
 import {message} from 'antd';

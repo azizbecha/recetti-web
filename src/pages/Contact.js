@@ -15,7 +15,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
 // Footer component
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 const Contact = () => {
 

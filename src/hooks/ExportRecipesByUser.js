@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 // Firestore database
-import {useFireStore} from './auth/Firebase';
+import {useFireStore} from '../auth/Firebase';
 
 // Bootstrap
 import {Row, Button, Card, Col} from 'react-bootstrap';

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 
 // Components
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 // Styles
-import '../../index.css';
+import '../index.css';
 import '../styles/Register.css';
 
 // Firebase

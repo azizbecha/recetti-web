@@ -7,10 +7,10 @@ import styled from 'styled-components';
 import {useFireStore} from '../auth/Firebase';
 
 // ExportRecipes component
-import ExportRecipes from '../ExportRecipes';
+import ExportRecipes from '../hooks/ExportRecipes';
 
 // Footer component
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 // Library to render html codes inside strings
 import ReactHtmlParser from 'react-html-parser';
@@ -18,7 +18,7 @@ import ReactHtmlParser from 'react-html-parser';
 // Bootstrap 4
 import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../../index.css';
+import '../index.css';
 
 export default function Recettes() {
 
