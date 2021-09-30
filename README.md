@@ -22,7 +22,6 @@
 - Add FAQ
 - Customize SEO tags
 - Improve the UI of See Recipe components
-- Design the 404 not found page component
 - Add share buttons
 - Add feature users can add profile picture and update their infos
 - Fix overflow issue in mobile phones & iPads
