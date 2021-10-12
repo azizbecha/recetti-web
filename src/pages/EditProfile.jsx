@@ -1,9 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import {auth, useFireStore} from '../auth/Firebase';
 import {Container, Row, Col} from 'react-bootstrap';
 import {message} from 'antd';
-import {Link, useHistory} from 'react-router-dom';
-import logo from '../assets/images/recetti-logo.png'
+import {useHistory} from 'react-router-dom';
 import edit from '../assets/images/edit-profile.jpg'
 
 const EditProfile = () => {
@@ -14,9 +13,7 @@ const EditProfile = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [loading, setLoading] = useState(false);
-    function capitalize(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+
     document.title = `Editer mon profil - Recetti`;
     useFireStore
     .collection('users')

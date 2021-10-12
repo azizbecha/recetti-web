@@ -15,7 +15,7 @@ import logo from '../assets/images/recetti-logo.png';
 import {message} from 'antd';
 import 'antd/dist/antd.css';
 
-export default function NavBar() {
+const NavBar = () => {
   const history = useHistory();
   const {currentUser} = useAuth();
 
@@ -219,3 +219,5 @@ export default function NavBar() {
     );
   }
 }
+
+export default NavBar

@@ -49,7 +49,7 @@ const Login = () => {
         // Show success message to the user
         message.success('Connecté avec succés !', 3);
 
-        // Rdirect to the homepage
+        // Redirect to the homepage
         history.push('/');
       } catch {
         message.error('Please verify your informations');

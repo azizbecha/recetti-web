@@ -9,7 +9,7 @@ import {useAuth} from '../auth/AuthContext';
 import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-// ANTD components
+// antd components
 import {message} from 'antd';
 import 'antd/dist/antd.css';
 

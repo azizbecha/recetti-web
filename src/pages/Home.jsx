@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-// Boostrap 4
+// Bootstrap 4
 import {Container} from 'react-bootstrap';
 
 // Css file
@@ -13,7 +13,7 @@ import 'aos/dist/aos.css';
 // ExportRecipes component
 import ExportRecipes from '../hooks/ExportRecipes';
 
-class Home extends React.Component {
+class Home extends Component {
 
   componentDidMount() {
 
@@ -29,23 +29,21 @@ class Home extends React.Component {
   render() {
 
     // Meta tags to be used for SEO optimization
+    // eslint-disable-next-line
     const meta = {
-      title:
-        'Recetti - Votre meulleur espace de découvrir et partager des recettes.',
-      description:
-        'Trouvez et découvrez les meilleurs plats et recettes chez Recetti',
+      title: 'Recetti - Votre meulleur espace de découvrir et partager des recettes.',
+      description: 'Trouvez et découvrez les meilleurs plats et recettes chez Recetti',
       meta: {
         charset: 'utf-8',
         name: {
-          keywords:
-            'recetti,Recetti,RECETTI,recette,recettes,plats,diner,déjeuner,dessert,salé,.',
+          keywords: 'recetti,Recetti,RECETTI,recette,recettes,plats,diner,déjeuner,dessert,salé,.',
         },
       },
     };
     
     return (
       <Container>
-        <center>
+        <div className="text-center">
           {/* <h2 data-aos="fade-up" className="font-weight-bold">
             <i style={{color: '#f64152'}} className="fa fa-eye"></i> Trouvez des
             recettes a partir de ce que vous avez dans votre Frigo !
@@ -107,7 +105,7 @@ class Home extends React.Component {
           <ExportRecipes limit="3" category={'diner'} />
           <ExportRecipes limit="3" category={'dessert'} />
           
-        </center>
+        </div>
         <br />
       </Container>
     );

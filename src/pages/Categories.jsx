@@ -1,9 +1,10 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
+import {Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
 // CSS file
 import '../index.css';
 
+// Footer component
 import Footer from '../components/Footer';
 
 // Bootstrap
@@ -16,7 +17,7 @@ import Diner from '../assets/images/diner.jpg';
 import Dessert from '../assets/images/dessert.jpg';
 import ExportRecipes from '../hooks/ExportRecipes';
 
-export default function Categories () {
+const Categories = () => {
 
   let match = useRouteMatch();
 
@@ -163,3 +164,5 @@ function CategoryDetails() {
     </div>
   );
 }
+
+export default Categories

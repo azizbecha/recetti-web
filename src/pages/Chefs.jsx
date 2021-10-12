@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
+import {Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
 // Firebase firestore database
 import {useFireStore} from '../auth/Firebase';

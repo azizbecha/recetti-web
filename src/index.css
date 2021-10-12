@@ -13,7 +13,8 @@ body {
   font-family: "Google Sans", "Sans Serif";
 }
 
-::-moz-selection { /* Code for Firefox */
+/* Code for Firefox */
+::-moz-selection { 
   color: #f64152;
   background: white;
 }
@@ -26,7 +27,6 @@ body {
 ::-webkit-scrollbar {
   width: 15px;
   border-radius: 10px;
-  
 }
 
 ::-webkit-scrollbar-track {
@@ -58,7 +58,7 @@ body {
   background-color: #f72439;
   border-color: #f72439;
 }
-  
+
 .btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem #cc1427;
   background-color: #f72439;
@@ -68,20 +68,20 @@ body {
   box-shadow: 0 0 0 0.2rem #cc1427;
   background-color: #f72439;
 }
-  
+
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
   background-color: #cc1427;
   border-color: #cc1427;
 }
-  
+
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
   background-color: #f64152;
   border-color: #f64152;
 }
-  
+
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #f64152;
@@ -139,7 +139,7 @@ a:hover {
   background-color: #f64152;
 }
 
-.badge-primary[href]:hover, .badge-primary[href]:focus {
+.badge-primary:hover, .badge-primary:focus {
   color: #fff;
   text-decoration: none;
   background-color: #f64152;

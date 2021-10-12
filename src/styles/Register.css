@@ -3,23 +3,34 @@
     background: #f64152;
     font-family: 'Google Sans', sans-serif;
 }
-.form-control{
+
+.form-control {
     height: 41px;
     background: #f2f2f2;
     box-shadow: none !important;
     border: none;
 }
+
 .form-control:focus{
     background: #e2e2e2;
 }
-.form-control, .btn{        
+
+.form-control, .btn {
     border-radius: 3px;
 }
-.signup-form{
-    width: 390px;
-    margin: 30px auto;
+
+.signup-form {
+    width: 380px;
+    margin: 30px 0px;
 }
-.signup-form .form{
+
+@media screen and (max-width: 768px) {
+  .signup-form {
+    width: 93%
+  }
+}
+
+.signup-form .form {
     color: #999;
     border-radius: 3px;
     margin-bottom: 15px;
@@ -28,39 +39,47 @@
     padding: 30px;
     margin-top:12%
 }
+
 .signup-form h2 {
     color: #333;
     font-weight: bold;
     margin-top: 0;
 }
+
 .signup-form hr {
     margin: 0 -30px 20px;
-}    
+}
+
 .signup-form .form-group{
     margin-bottom: 20px;
 }
+
 .signup-form input[type="checkbox"]{
     margin-top: 3px;
 }
+
 .signup-form .row div:first-child{
     padding-right: 10px;
 }
+
 .signup-form .row div:last-child{
     padding-left: 10px;
 }
-.signup-form .btn{        
+
+.signup-form .btn{
     font-size: 16px;
     font-weight: bold;
     border: none;
     width: 100%
 }
 
-.signup-form a{
+.signup-form a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
-.signup-form a:hover{
+
+.signup-form a:hover {
     text-decoration: none;
 }
 

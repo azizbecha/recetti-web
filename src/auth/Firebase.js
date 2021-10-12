@@ -9,10 +9,10 @@ const app = firebase.initializeApp(config);
 // Auth
 export const auth = app.auth();
 
-//Firestore database
+// Firestore database
 export const useFireStore = firebase.firestore();
 
-//Firebase storage
+// Firebase storage
 export const useFireStorage = firebase.storage();
 
 export default app;

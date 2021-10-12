@@ -41,6 +41,8 @@ const ExportRecipes = ({category, limit}) => {
     };
 
     pullData();
+
+    //eslint-disable-next-line
   }, []);
 
   return (

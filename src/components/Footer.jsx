@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from '../assets/images/recetti-logo.png';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer
       style={{fontWeight: 'bold'}}
@@ -94,3 +93,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer

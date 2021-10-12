@@ -2,6 +2,7 @@ import React from 'react';
 import {Redirect, Route} from 'react-router-dom';
 import {useAuth} from './AuthContext';
 import {message} from 'antd';
+
 const PrivateRoute = ({component: Component, ...rest}) => {
   const {currentUser} = useAuth();
   return (

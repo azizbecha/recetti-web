@@ -9,6 +9,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+// antd
 import 'antd/dist/antd.css';
 
 // Import CSS
@@ -44,15 +45,16 @@ import Contact from './pages/Contact';
 import EditProfile from './pages/EditProfile';
 
 const App = () => {
-  //var user = firebase.auth().currentUser;
   return (
     <AuthProvider>
       <Router>
         <NavBar />
         <Switch>
+
           <ProtectedRoute path="/register" component={Register} />
           <ProtectedRoute path="/login" component={Login} />
           <ProtectedRoute path="/forgot-password" component={ForgotPassword} />
+
           <PrivateRoute path="/add-recipe" component={AddRecipe} />
           <PrivateRoute path="/contact" component={Contact} />
           <PrivateRoute path="/edit-profile" component={EditProfile} />

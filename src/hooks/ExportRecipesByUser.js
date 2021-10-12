@@ -40,6 +40,8 @@ const ExportRecipesByUser = ({category, limit, byUser}) => {
     };
 
     pullData();
+
+    //eslint-disable-next-line
   }, []);
 
   return (

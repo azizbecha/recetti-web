@@ -1,16 +1,9 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
+import {Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
 import {Container} from 'react-bootstrap';
 
-export default function Forum() {
+const Forum = () => {
 
   let match = useRouteMatch();
   document.title = 'Forum - Recetti';
@@ -20,7 +13,7 @@ export default function Forum() {
       <Container fluid>
         <Switch>
           <Route path={`${match.path}/:forumId`}>
-            <Forum />
+            <ForumDetails />
           </Route>
           <Route path={match.path}>
             <h1 className="text-center mt-2">Forum</h1>
@@ -34,7 +27,9 @@ export default function Forum() {
   );
 }
 
-/*function Forum() {
+function ForumDetails() {
     let { forumId } = useParams();
     return <h3>Requested topic ID: {forumId}</h3>;
-}*/
+}
+
+export default Forum

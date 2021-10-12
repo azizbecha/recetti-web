@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
+import {Switch, Route, Link, useRouteMatch, useParams} from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../index.css';
 
-export default function Recettes() {
+const Recettes = () => {
 
   // Page title
   document.title = 'Recettes - Recetti';
@@ -85,7 +85,9 @@ const DetailsRecette = () => {
   const [recipeDescription, setRecipeDescription] = useState('');
   const [recipeCategory, setRecipeCategory] = useState('');
   const [recipeAuthor, setRecipeAuthor] = useState('');
+  // eslint-disable-next-line
   const [recipeAddDate, setRecipeAddDate] = useState('');
+  // eslint-disable-next-line
   const [recipeID, setRecipeID] = useState('');
   const [recipeAuthorID, setRecipeAuthorID] = useState('');
   const [recipeImage, setRecipeImage] = useState('');
@@ -118,16 +120,16 @@ const DetailsRecette = () => {
         setRecipeAddDate(data.date);
         document.title = `${recipeName} - Recetti`;
       }
-      
+
     });
 
-  if (recipeName!=="") {
+  if (recipeName !== "") {
     return (
       <>
         <Container>
           <Heading>{recipeName}</Heading>
           <Image src={recipeImage} alt={'Image de la recette: ' + recipeName} />
-  
+
           <Text>
             <i className="fa fa-tag rose"></i> Catégorie:{' '}
             <Link to={`../../categories/${recipeCategory}`}>
@@ -136,17 +138,17 @@ const DetailsRecette = () => {
               </CategoryBadge>
             </Link>
           </Text>
-  
+
           <Text>
             <i className="fa fa-info-circle rose"></i> Description
           </Text>
           <Description className="ml-4">{ReactHtmlParser(recipeDescription)}</Description>
-  
+
           <Text>
             <i className="fa fa-pencil rose"></i> Ingredients
           </Text>
           <Ingredients className="ml-4">{ReactHtmlParser(recipeIngredients)}</Ingredients>
-  
+
           <Text>
             <i className="fa fa-user-circle rose"></i> Publiée par
           </Text>
@@ -161,7 +163,7 @@ const DetailsRecette = () => {
 
     // Page title
     document.title = `Recette non trouvée - Recetti`;
-    
+
     return (
       <Container className="mt-3">
         <div className="text-center font-weight-bold mt-5">
@@ -176,6 +178,8 @@ const DetailsRecette = () => {
     )
   }
 };
+
+export default Recettes;
 
 // Custom styles
 

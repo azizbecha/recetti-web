@@ -92,7 +92,7 @@ const Contact = () => {
             message.error("Une erreur s'est produite !",2);
         }*/
   };
-  
+
   return (
     <>
       <Container className="mb-5">

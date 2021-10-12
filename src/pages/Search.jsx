@@ -57,6 +57,8 @@ function SearchResult() {
     };
 
     pullData();
+    
+    //eslint-disable-next-line
   }, []);
 
   return (

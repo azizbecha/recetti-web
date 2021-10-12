@@ -18,9 +18,9 @@ const Register = () => {
 
   // Page title
   document.title = "S'inscrire - Recetti";
-  
+
   let history = useHistory();
-  
+
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
@@ -42,7 +42,7 @@ const Register = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        
+
         // After creating a user, get his id then create new user in the firestore database
         auth.signInWithEmailAndPassword(email, password);
         var user = auth.currentUser;
@@ -76,14 +76,15 @@ const Register = () => {
   };
   return (
     <>
+      <center>
       <div className="signup-form body">
         <div className="form">
-          <h2>Créer un compte</h2>
-          <p>Créez un compte et rejoignez Recetti !</p>
+          <h2 className="text-left" >Créer un compte</h2>
+          <p className="text-left" >Créez un compte et rejoignez Recetti !</p>
           <hr />
           <div className="form-group">
             <div className="row">
-              <div className="col-sm-6">
+              <div className="col-6">
                 <input
                   value={firstname}
                   onChange={event => setFirstname(event.target.value)}
@@ -93,7 +94,7 @@ const Register = () => {
                   required="required"
                 />
               </div>
-              <div className="col-sm-6">
+              <div className="col-6">
                 <input
                   value={lastname}
                   onChange={event => setLastname(event.target.value)}
@@ -155,6 +156,7 @@ const Register = () => {
           Vous avez déja un compte ? <Link to="login">Se Connecter</Link>
         </div>
       </div>
+      </center>
       <Footer />
     </>
   );

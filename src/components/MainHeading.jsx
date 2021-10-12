@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 
-export default function MainHeading() {
+const MainHeading = () => {
   const history = useHistory();
   const [keyword, setKeyword] = useState('');
   const [category, setCategory] = useState('');
@@ -9,7 +9,7 @@ export default function MainHeading() {
   const GoSearch = () => {
     history.push(`search/${category}/${keyword}`);
   };
-  
+
   return (
     <div className="jumbotron text-center">
       <center>
@@ -71,7 +71,7 @@ export default function MainHeading() {
                   data-aos="zoom-in"
                   className="btn btn-primary mr-1 font-weight-bold"
                 >
-                  <i className="fa fa-tag"></i>&nbsp; Petit Déjeuner
+                  <i className="fa fa-tag"></i>&nbsp; Petit Déj
                 </span>
               </Link>
               <Link to="categories/dejeuner">
@@ -105,3 +105,5 @@ export default function MainHeading() {
     </div>
   );
 }
+
+export default MainHeading
