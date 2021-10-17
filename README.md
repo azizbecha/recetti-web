@@ -24,8 +24,6 @@
 - Improve the UI of See Recipe components
 - Add share buttons
 - Add feature users can add profile picture and update their infos
-- Fix overflow issue in mobile phones & iPads
-
 
 ## About
 ### Recetti is a platform used to share recipes with others.
