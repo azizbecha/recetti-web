@@ -6,15 +6,15 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/azizvirus/recetti-web?color=f64152" />
-  <img src="https://img.shields.io/github/contributors/AzizVirus/recetti-web?color=f64152" />
-  <img src="https://img.shields.io/github/last-commit/AzizVirus/recetti-web?color=f64152" />
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=AzizVirus.recetti-web&color=f64152" />
-  <img src="https://img.shields.io/github/languages/count/azizvirus/recetti-web?color=f64152" />
-  <img src="https://img.shields.io/github/languages/top/azizvirus/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/stars/azizbecha/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/contributors/azizbecha/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/last-commit/azizbecha/recetti-web?color=f64152" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=azizbecha.recetti-web&color=f64152" />
+  <img src="https://img.shields.io/github/languages/count/azizbecha/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/languages/top/azizbecha/recetti-web?color=f64152" />
   <img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
-  <img src="https://img.shields.io/github/issues/AzizVirus/recetti-web?color=f64152" />
-  <img src="https://img.shields.io/github/issues-pr/AzizVirus/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/issues/azizbecha/recetti-web?color=f64152" />
+  <img src="https://img.shields.io/github/issues-pr/azizbecha/recetti-web?color=f64152" />
 </p>
 
 ## TO-DO
@@ -31,7 +31,7 @@
 ## Development & Contributing
 ### 1 - To install the project & develop:
 
-- Clone the project (git clone https://github.com/azizvirus/recetti-web.git)
+- Clone the project (git clone https://github.com/azizbecha/recetti-web.git)
 - Go to the project folder (cd recetti-web)
 - Create config.js file inside src/components/auth and add your firebase credentials: 
 
